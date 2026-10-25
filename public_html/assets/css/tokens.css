@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Design tokens · Clínica Veterinaria La Guardia
+   Concepto "La cruz que cuida". Fuente única de verdad para color, tipo,
+   espaciado, radios, sombras y motion. Todo el resto del CSS consume estas
+   variables: no hardcodear valores en componentes.
+   ========================================================================== */
+
+:root {
+  /* ---- Color · escalas -------------------------------------------------- */
+  --plum-50:  #FBF5FC;
+  --plum-100: #F4E8F7;
+  --plum-200: #E6D0EC;
+  --plum-300: #CFAED9;
+  --plum-400: #A983B8;
+  --plum-500: #7E5C92;
+  --plum-600: #5A3F6C; /* logo */
+  --plum-700: #46305A;
+  --plum-800: #361F4A;
+  --plum-900: #2C0C3D; /* logo · fondo principal */
+  --plum-950: #1B0626;
+
+  --magenta-50:  #FFF0F7;
+  --magenta-100: #FFDDEE;
+  --magenta-200: #FFBCDD;
+  --magenta-300: #FB8FC4;
+  --magenta-400: #F466AE;
+  --magenta-500: #E8419A; /* logo · cruz */
+  --magenta-600: #CF2E86; /* botones con texto blanco (4,8:1) */
+  --magenta-700: #A81F6B; /* texto magenta sobre claro (6,4:1) */
+  --magenta-800: #861A57;
+  --magenta-900: #6B1848;
+  --magenta-950: #420626;
+
+  --lilac-50: #FFEFFF;
+  --white:    #FFFFFF;
+  --whatsapp: #25D366; /* solo botón flotante */
+
+  /* ---- Color · roles ---------------------------------------------------- */
+  --bg-dark:        var(--plum-900);
+  --bg-darker:      var(--plum-950);
+  --bg-light:       var(--plum-50);
+  --bg-card:        var(--white);
+  --bg-accent:      var(--magenta-500);
+
+  --text-on-dark:   var(--lilac-50);   /* 15,5:1 sobre plum-900 */
+  --text-on-dark-2: var(--plum-300);   /* 8,7:1 */
+  --text-on-light:  var(--plum-900);
+  --text-on-light-2:var(--plum-600);   /* 8,3:1 sobre plum-50 */
+  --text-on-accent: var(--plum-950);   /* 5,1:1 sobre magenta-500 */
+
+  --accent:         var(--magenta-500); /* cruz, highlights sobre oscuro */
+  --accent-text:    var(--magenta-700); /* links y overlines sobre claro */
+  --cta:            var(--magenta-600);
+  --cta-hover:      var(--magenta-500);
+  --focus-ring:     var(--magenta-300);
+
+  --border-dark:    var(--plum-600);
+  --border-light:   var(--plum-200);
+
+  /* ---- Tipografía ------------------------------------------------------- */
+  --font-display: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
+  --font-body:    "Plus Jakarta Sans", "Jakarta Fallback", system-ui, sans-serif;
+
+  /* Las instancias self-hosted ya vienen con ancho y tamaño óptico fijos
+     (ver fonts.css); los ejes quedan por si se vuelve al archivo variable. */
+  --display-axes: normal;
+
+  --fs-display: clamp(3.25rem, 1.6rem + 6.4vw, 7rem);    /* hero */
+  --fs-h1:      clamp(2.75rem, 1.6rem + 4.2vw, 5rem);
+  --fs-h2:      clamp(2.25rem, 1.5rem + 2.8vw, 3.5rem);
+  --fs-h3:      clamp(1.5rem, 1.25rem + 0.8vw, 1.875rem);
+  --fs-h4:      1.25rem;
+  --fs-lead:    clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+  --fs-overline:0.8125rem;
+
+  --lh-tight: 0.92;
+  --lh-snug:  1.1;
+  --lh-body:  1.6;
+
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.025em;
+  --tracking-overline: 0.14em;
+
+  /* ---- Espaciado · base 4 ----------------------------------------------- */
+  --space-1: 0.25rem;  /* 4  */
+  --space-2: 0.5rem;   /* 8  */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-6: 1.5rem;   /* 24 */
+  --space-8: 2rem;     /* 32 */
+  --space-12: 3rem;    /* 48 */
+  --space-16: 4rem;    /* 64 */
+  --space-24: 6rem;    /* 96 */
+  --space-32: 8rem;    /* 128 */
+
+  --section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --container: 80rem;  /* 1280 */
+  --gutter: clamp(1rem, 0.5rem + 2vw, 1.5rem);
+
+  /* ---- Radios ----------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---- Sombras · tinte violeta ----------------------------------------- */
+  --shadow-sm: 0 1px 2px rgb(44 12 61 / 0.08), 0 2px 8px -2px rgb(44 12 61 / 0.10);
+  --shadow-md: 0 12px 32px -8px rgb(44 12 61 / 0.22);
+  --shadow-lg: 0 28px 64px -16px rgb(44 12 61 / 0.34);
+  --shadow-glow: 0 14px 36px -10px rgb(232 65 154 / 0.65);
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);   /* ~ power3.out */
+  --ease-expo:  cubic-bezier(0.16, 1, 0.3, 1);    /* ~ expo.out */
+  --ease-back:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 600ms;
+
+  /* ---- Capas ------------------------------------------------------------ */
+  --z-header: 50;
+  --z-float: 60;
+  --z-dialog: 100;
+
+  --header-h: 5rem;
+  --header-h-compact: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}

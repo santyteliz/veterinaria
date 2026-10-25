@@ -1,0 +1,103 @@
+# Clínica Veterinaria La Guardia · reglas del sitio (Hostinger / LiteSpeed / Apache)
+
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # HTTPS siempre y dominio sin www (una sola URL canónica).
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # /index.php y /servicio.php?slug=x → URL limpia.
+  RewriteCond %{THE_REQUEST} \s/index\.php[\s?]
+  RewriteRule ^index\.php$ / [L,R=301]
+  RewriteCond %{THE_REQUEST} \s/servicio\.php\?slug=([a-z0-9-]+)[\s&]
+  RewriteRule ^servicio\.php$ /%1? [L,R=301]
+
+  # Sitemap y robots generados desde site.json.
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+  RewriteRule ^robots\.txt$ robots.php [L]
+
+  # Sin barra final (excepto carpetas reales como /admin/).
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # Páginas fijas.
+  RewriteRule ^politica-de-privacidad$ politica-de-privacidad.php [L]
+  RewriteCond %{THE_REQUEST} \s/politica-de-privacidad\.php[\s?]
+  RewriteRule ^politica-de-privacidad\.php$ /politica-de-privacidad [L,R=301]
+
+  # Páginas de servicio: /peluqueria-canina-santo-tome → servicio.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-z0-9-]+)$ servicio.php?slug=$1 [L,QSA]
+</IfModule>
+
+# Archivos que nunca se sirven por URL.
+<FilesMatch "(?i)\.(json|md|lock|log|bak|tmp)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# ---- Tipos MIME --------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddCharset utf-8 .css .js .svg .txt .xml
+</IfModule>
+
+# ---- Compresión (LiteSpeed usa Brotli solo si el cliente lo acepta) -----------
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain text/xml application/javascript application/json application/xml application/ld+json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml application/ld+json image/svg+xml
+</IfModule>
+
+# ---- Cache del navegador ------------------------------------------------------
+# CSS y JS propios llevan ?v=<fecha de modificación> y las librerías llevan la
+# versión en el nombre: se pueden cachear un año como inmutables.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType application/xml "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpe?g|svg|avif)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # ---- Seguridad ---------------------------------------------------------------
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header unset X-Powered-By
+</IfModule>

@@ -1,0 +1,10 @@
+# Panel: no se indexa, no se lista y config.php no se puede pedir directo.
+Options -Indexes
+
+<Files "config.php">
+  Require all denied
+</Files>
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

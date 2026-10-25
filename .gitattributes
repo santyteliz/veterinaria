@@ -1,0 +1,7 @@
+# Saltos de línea LF en el repo y en el servidor (Hostinger y Vercel son Linux).
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary
+*.webp binary
+*.woff2 binary

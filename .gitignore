@@ -1,0 +1,22 @@
+# Documentos internos del proyecto (presupuesto, relevamiento, brief): el repo es público.
+01-PROMPT-MAESTRO.md
+02-INFO-DEL-NEGOCIO.md
+03-REFERENCIAS-DE-DISENO.md
+04-MATERIAL-A-PEDIR-AL-CLIENTE.md
+05-MOODBOARD-PINTEREST.html
+Propuesta-Web-La-Guardia.pdf
+logo/
+
+# Herramientas y salidas locales
+.claude/
+deploy/
+node_modules/
+
+# Datos que genera el panel en el servidor (nunca al repo)
+public_html/content/auth.json
+public_html/content/login-attempts.json
+public_html/content/backups/
+public_html/content/.lock
+*.tmp
+.DS_Store
+Thumbs.db

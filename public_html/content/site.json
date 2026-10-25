@@ -1,0 +1,632 @@
+{
+    "version": 1,
+    "site": {
+        "name": "Clínica Veterinaria La Guardia",
+        "short_name": "La Guardia",
+        "url": "https://clinicalaguardia.com.ar",
+        "lang": "es-AR",
+        "timezone": "America/Argentina/Cordoba"
+    },
+    "contact": {
+        "whatsapp": "5493424860753",
+        "phone": "+543424860753",
+        "phone_display": "342 486-0753",
+        "email": "veterinaria.laguardia01@gmail.com",
+        "address": "Gaboto esq. Buenos Aires",
+        "address_note": "[A CONFIRMAR: número exacto, Gaboto 2696 o Buenos Aires 2399]",
+        "city": "Santo Tomé",
+        "region": "Santa Fe",
+        "postal_code": "3016",
+        "maps_query": "Gaboto y Buenos Aires, Santo Tomé, Santa Fe, Argentina",
+        "maps_url": "",
+        "instagram": "https://www.instagram.com/veterinaria_laguardia/",
+        "facebook": "https://www.facebook.com/la.guardiavet/",
+        "geo": {
+            "lat": "",
+            "lng": ""
+        }
+    },
+    "home_visits": {
+        "vet": "MV Cristian López",
+        "whatsapp": "5493426131922",
+        "phone": "+543426131922",
+        "phone_display": "342 613-1922"
+    },
+    "announcement": {
+        "enabled": true,
+        "text": "Versión de prueba: las fotos son de ejemplo y se reemplazan por las de la clínica.",
+        "style": "plum",
+        "expires": ""
+    },
+    "hours": {
+        "note": "Por orden de llegada",
+        "pending": "[A CONFIRMAR: tarde 17 a 20 h o 17 a 19:30 h, y si atienden sábados]",
+        "week": {
+            "1": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "2": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "3": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "4": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "5": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "6": [],
+            "7": []
+        },
+        "special": []
+    },
+    "hero": {
+        "variant": "A",
+        "overline": "Santo Tomé · Santa Fe",
+        "title": "Cuidamos a los que",
+        "title_accent": "más querés.",
+        "subtitle": "Clínica general, peluquería canina, pet shop y farmacia en Santo Tomé.",
+        "image": "/uploads/2026/10/8a013edf27911edf6fb3.webp",
+        "image_alt": "Perro blanco y gato abrazados (foto de ejemplo)",
+        "video": "",
+        "chips": [
+            "Sin turno · por orden de llegada",
+            "Peluquería canina",
+            "Atención a domicilio"
+        ]
+    },
+    "marquee": [
+        "Clínica general",
+        "Vacunación",
+        "Peluquería canina",
+        "Pet Shop",
+        "Farmacia veterinaria",
+        "Alimentos balanceados",
+        "Atención a domicilio"
+    ],
+    "whatsapp_template": "¡Hola La Guardia! Quiero consultar por: {servicio}. Mascota: ____ · Motivo: ____",
+    "services": [
+        {
+            "id": "clinica",
+            "name": "Clínica general",
+            "description": "Consultas para perros y gatos. Vení sin turno: atendemos por orden de llegada.",
+            "icon": "stethoscope",
+            "visible": true
+        },
+        {
+            "id": "vacunacion",
+            "name": "Vacunación",
+            "description": "Plan de vacunas para tu perro o gato, y te avisamos por WhatsApp cuando toca la próxima.",
+            "icon": "syringe",
+            "page": "/vacunacion-perros-gatos-santo-tome",
+            "visible": true
+        },
+        {
+            "id": "peluqueria",
+            "name": "Peluquería canina",
+            "description": "Baño y corte con turno previo. Pagás en efectivo o transferencia.",
+            "icon": "scissors",
+            "cta": "Pedir turno",
+            "page": "/peluqueria-canina-santo-tome",
+            "visible": true
+        },
+        {
+            "id": "petshop",
+            "name": "Pet Shop",
+            "description": "Lo que tu mascota necesita para el día a día. Consultanos por stock.",
+            "icon": "bag",
+            "page": "/pet-shop-santo-tome",
+            "visible": true
+        },
+        {
+            "id": "farmacia",
+            "name": "Farmacia veterinaria",
+            "description": "Medicamentos y antiparasitarios para que no haya más pulgas.",
+            "icon": "pill",
+            "visible": true
+        },
+        {
+            "id": "balanceados",
+            "name": "Alimentos balanceados",
+            "description": "Balanceados para perros y gatos. Preguntanos qué marcas tenemos hoy.",
+            "icon": "bowl",
+            "visible": true
+        },
+        {
+            "id": "domicilio",
+            "name": "Atención a domicilio",
+            "description": "Con el MV Cristian López, que va a tu casa. Coordinás directo con él.",
+            "icon": "home",
+            "cta": "Escribirle a Cristian",
+            "whatsapp": "5493426131922",
+            "page": "/veterinaria-a-domicilio-santo-tome",
+            "visible": true
+        }
+    ],
+    "steps": [
+        {
+            "title": "Venís sin turno",
+            "text": "Atendemos por orden de llegada, de lunes a viernes, mañana y tarde."
+        },
+        {
+            "title": "Te atendemos",
+            "text": "Revisamos a tu pacientito con tiempo y te explicamos todo."
+        },
+        {
+            "title": "Seguimiento por WhatsApp",
+            "text": "Te escribimos para saber cómo sigue y te avisamos cuando toca la próxima vacuna.",
+            "highlight": true
+        }
+    ],
+    "grooming": {
+        "title": "Peluquería canina",
+        "text": "Baño, corte y mimos para que vuelva a casa como nuevo. Trabajamos con turno previo para dedicarle el tiempo que necesita.",
+        "facts": [
+            "Con turno previo",
+            "Efectivo o transferencia"
+        ],
+        "before_after": [
+            {
+                "before": "/uploads/2026/10/4c681f3d9b81910b3bcd.webp",
+                "after": "/uploads/2026/10/57497d68737034cf9c2a.webp",
+                "alt": "Perro antes y después de la peluquería (foto de ejemplo)"
+            },
+            {
+                "before": "/uploads/2026/10/d1bcbb037f62a0060391.webp",
+                "after": "/uploads/2026/10/962a6896eea3e1812428.webp",
+                "alt": "Perro antes y después de la peluquería (foto de ejemplo)"
+            }
+        ]
+    },
+    "petshop": {
+        "title": "Pet Shop y balanceados",
+        "text": "No vendemos online: escribinos y te decimos si lo tenemos.",
+        "brands_note": "[A CONFIRMAR: marcas de balanceado que trabajan]",
+        "items": [
+            {
+                "name": "Alimentos balanceados",
+                "image": "/uploads/2026/10/d04aab0d41be22d79adf.webp"
+            },
+            {
+                "name": "Antiparasitarios",
+                "image": "/uploads/2026/10/d61b81bfb9e92103715e.webp"
+            },
+            {
+                "name": "Farmacia veterinaria",
+                "image": "/uploads/2026/10/7df613ac82208d8cad31.webp"
+            },
+            {
+                "name": "Accesorios",
+                "image": "/uploads/2026/10/fd983ca1b5f32612ddeb.webp"
+            }
+        ]
+    },
+    "patients": [
+        {
+            "image": "/uploads/2026/10/3fa94c00776a063cac65.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/c0cc8bff9ebe80b569bb.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/112f34518d0a547d2576.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/34f6af36d0d5b64cce5e.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/55efb38619b1ced55ee8.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/f9f87dd9030a24a04145.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/f307e9760d7ed8af700b.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/7091144177d0aec1c38c.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/37c598f3181c3e7235ec.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        }
+    ],
+    "team": [
+        {
+            "name": "MV Ángel E. Nasso",
+            "role": "Médico veterinario",
+            "bio": "[A CONFIRMAR: texto de presentación]",
+            "photo": ""
+        },
+        {
+            "name": "MV Cristian López",
+            "role": "Atención a domicilio",
+            "bio": "[A CONFIRMAR: texto de presentación]",
+            "photo": ""
+        },
+        {
+            "name": "Priscila",
+            "role": "[A CONFIRMAR: rol]",
+            "bio": "[A CONFIRMAR: texto de presentación]",
+            "photo": ""
+        }
+    ],
+    "reviews": {
+        "rating": 4.8,
+        "count": 200,
+        "verified": false,
+        "google_url": "",
+        "items": []
+    },
+    "emergency": {
+        "title": "¿Es una urgencia?",
+        "text": "No realizamos urgencias. Comunicate con estas clínicas de guardia:",
+        "clinics": [
+            {
+                "name": "",
+                "phone": "+543425302300",
+                "phone_display": "342 530-2300"
+            },
+            {
+                "name": "",
+                "phone": "+543425348854",
+                "phone_display": "342 534-8854"
+            },
+            {
+                "name": "",
+                "phone": "+543426315616",
+                "phone_display": "342 631-5616"
+            },
+            {
+                "name": "",
+                "phone": "+543425502341",
+                "phone_display": "342 550-2341"
+            },
+            {
+                "name": "Azul Veterinaria 24 h",
+                "phone": "+543424296152",
+                "phone_display": "342 429-6152"
+            },
+            {
+                "name": "",
+                "phone": "+543425829237",
+                "phone_display": "342 582-9237"
+            },
+            {
+                "name": "",
+                "phone": "+543425781810",
+                "phone_display": "342 578-1810"
+            }
+        ]
+    },
+    "faq": [
+        {
+            "q": "¿Necesito turno?",
+            "a": "Para consultas en el consultorio, no: atendemos por orden de llegada. La peluquería canina sí trabaja con turno previo."
+        },
+        {
+            "q": "¿Atienden urgencias?",
+            "a": "No realizamos urgencias. En esta misma página tenés la lista de clínicas de guardia con sus teléfonos."
+        },
+        {
+            "q": "¿Hacen atención a domicilio?",
+            "a": "Sí, con el MV Cristian López. Escribile directo al 342 613-1922."
+        },
+        {
+            "q": "¿Cómo pago la peluquería?",
+            "a": "En efectivo o por transferencia."
+        },
+        {
+            "q": "¿Venden alimento balanceado?",
+            "a": "Sí. Escribinos por WhatsApp y te decimos qué tenemos en stock."
+        }
+    ],
+    "seo": {
+        "home": {
+            "title": "Veterinaria en Santo Tomé | Clínica Veterinaria La Guardia",
+            "description": "Clínica general, vacunación, peluquería canina, pet shop y balanceados en Santo Tomé, Santa Fe. Atención por orden de llegada. Escribinos por WhatsApp."
+        },
+        "price_range": ""
+    },
+    "pages": {
+        "peluqueria-canina-santo-tome": {
+            "service": "peluqueria",
+            "breadcrumb": "Peluquería canina",
+            "title": "Peluquería canina en Santo Tomé | Veterinaria La Guardia",
+            "description": "Peluquería canina en Santo Tomé con turno previo: baño y corte en la misma clínica veterinaria. Pagás en efectivo o transferencia. Pedí tu turno por WhatsApp.",
+            "h1": "Peluquería canina en Santo Tomé",
+            "lead": "Baño, corte y mimos para tu perro, en la misma clínica donde lo atendemos. Trabajamos con turno previo para dedicarle a cada uno el tiempo que necesita.",
+            "cta": "Pedir turno de peluquería",
+            "wa_service": "un turno de peluquería canina",
+            "facts": [
+                "Con turno previo",
+                "Efectivo o transferencia"
+            ],
+            "sections": [
+                {
+                    "title": "Cómo pedir turno",
+                    "paragraphs": [
+                        "Escribinos por WhatsApp y contanos la raza o el tamaño de tu perro, cómo tiene el pelo y qué le querés hacer. Con eso te pasamos el día y el horario disponibles.",
+                        "Los turnos de peluquería van aparte de la atención del consultorio, que es sin turno y por orden de llegada."
+                    ]
+                },
+                {
+                    "title": "Qué hacemos",
+                    "paragraphs": [
+                        "Cada perro es distinto: el trabajo depende de su raza, de su pelaje y de cómo se siente ese día. Antes de empezar te preguntamos qué querés y, si vemos algo en la piel o en el pelo que convenga revisar, te avisamos para que lo vea el veterinario.",
+                        "[A CONFIRMAR: detalle de los servicios de peluquería (baño, corte, deslanado, uñas, oídos)]"
+                    ]
+                },
+                {
+                    "title": "Cómo se paga",
+                    "paragraphs": [
+                        "En efectivo o por transferencia. Si querés saber el precio antes, escribinos con la raza y el tamaño de tu perro y te lo pasamos."
+                    ]
+                },
+                {
+                    "title": "Para que el turno salga bien",
+                    "list": [
+                        "Sacalo a pasear un rato antes, así llega más tranquilo.",
+                        "Traelo con collar y correa.",
+                        "Si es la primera vez o se pone nervioso, contanos: lo tenemos en cuenta.",
+                        "Si tiene alguna lastimadura, alergia o problema de piel, avisanos al pedir el turno."
+                    ]
+                }
+            ],
+            "faq": [
+                {
+                    "q": "¿Necesito turno para la peluquería canina?",
+                    "a": "Sí. La peluquería trabaja con turno previo. Pedilo por WhatsApp y te pasamos día y horario."
+                },
+                {
+                    "q": "¿Cómo pago la peluquería?",
+                    "a": "En efectivo o por transferencia."
+                },
+                {
+                    "q": "¿Cuánto cuesta el baño y corte?",
+                    "a": "Depende del tamaño y del tipo de pelo de tu perro. Escribinos por WhatsApp con esos datos y te pasamos el precio."
+                },
+                {
+                    "q": "¿Puedo aprovechar para hacerle una consulta?",
+                    "a": "Sí. El consultorio está en el mismo lugar y atiende sin turno, por orden de llegada, en el horario de atención."
+                }
+            ]
+        },
+        "pet-shop-santo-tome": {
+            "service": "petshop",
+            "breadcrumb": "Pet Shop",
+            "title": "Pet Shop y alimento balanceado en Santo Tomé | La Guardia",
+            "description": "Pet Shop en Santo Tomé: alimento balanceado para perros y gatos, antiparasitarios y farmacia veterinaria. Consultá stock por WhatsApp y pasá por la clínica.",
+            "h1": "Pet Shop y alimento balanceado en Santo Tomé",
+            "lead": "Balanceados, antiparasitarios y lo que tu mascota necesita para el día a día, en la misma clínica donde la atienden. Escribinos y te decimos si lo tenemos.",
+            "cta": "Consultar stock",
+            "wa_service": "stock del pet shop",
+            "facts": [
+                "Consultá stock por WhatsApp",
+                "Asesoramiento veterinario"
+            ],
+            "sections": [
+                {
+                    "title": "Alimentos balanceados",
+                    "paragraphs": [
+                        "Tenemos balanceado para perros y gatos. Como el stock cambia, lo más rápido es escribirnos por WhatsApp con la marca y el tamaño de bolsa que buscás.",
+                        "¿No sabés cuál le conviene? Preguntanos: la edad, el tamaño y la salud de tu mascota cambian lo que necesita, y en la clínica te podemos orientar.",
+                        "[A CONFIRMAR: marcas de balanceado que trabajan]"
+                    ]
+                },
+                {
+                    "title": "Antiparasitarios y farmacia veterinaria",
+                    "paragraphs": [
+                        "Antiparasitarios para que no haya más pulgas, y medicamentos veterinarios.",
+                        "Si un medicamento lo indicó el veterinario, traé la indicación. Y si tenés dudas con la dosis o con cuál elegir, consultanos antes de dárselo."
+                    ]
+                },
+                {
+                    "title": "Cómo comprar",
+                    "paragraphs": [
+                        "No vendemos online. Escribinos por WhatsApp, te decimos si lo tenemos y lo pasás a buscar por la clínica en el horario de atención.",
+                        "[A CONFIRMAR: si hacen envíos a domicilio]"
+                    ]
+                }
+            ],
+            "faq": [
+                {
+                    "q": "¿Venden alimento balanceado?",
+                    "a": "Sí, para perros y gatos. Escribinos por WhatsApp y te decimos qué tenemos en stock."
+                },
+                {
+                    "q": "¿Venden online?",
+                    "a": "No. Consultá el stock por WhatsApp y pasá a buscarlo por la clínica en el horario de atención."
+                },
+                {
+                    "q": "¿Me ayudan a elegir el alimento?",
+                    "a": "Sí. Contanos la edad, el tamaño y si tiene algún problema de salud, y te orientamos."
+                },
+                {
+                    "q": "¿Hacen envíos?",
+                    "a": "[A CONFIRMAR: si hacen envíos y a qué zonas]"
+                }
+            ]
+        },
+        "veterinaria-a-domicilio-santo-tome": {
+            "service": "domicilio",
+            "breadcrumb": "Veterinaria a domicilio",
+            "title": "Veterinaria a domicilio en Santo Tomé | MV Cristian López",
+            "description": "Atención veterinaria a domicilio en Santo Tomé con el MV Cristian López. Ideal para mascotas mayores o que se estresan con el viaje. Coordiná por WhatsApp.",
+            "h1": "Veterinaria a domicilio en Santo Tomé",
+            "lead": "Si tu mascota no puede venir a la clínica, el MV Cristian López la atiende en tu casa. Coordinás directo con él, que tiene su propio número.",
+            "cta": "Escribirle a Cristian",
+            "wa_service": "atención a domicilio",
+            "facts": [
+                "Atención en tu casa",
+                "Coordinás directo con el veterinario"
+            ],
+            "sections": [
+                {
+                    "title": "Cuándo conviene la atención a domicilio",
+                    "list": [
+                        "Mascotas mayores o con dificultad para moverse.",
+                        "Perros o gatos que se estresan mucho con el viaje o en la sala de espera.",
+                        "Cuando tenés varias mascotas en casa.",
+                        "Cuando a vos se te complica trasladarte."
+                    ]
+                },
+                {
+                    "title": "Cómo coordinar",
+                    "paragraphs": [
+                        "Escribile a Cristian por WhatsApp contándole qué le pasa a tu mascota, la especie, la edad y tu dirección. Con eso te confirma día y horario.",
+                        "[A CONFIRMAR: zonas y horarios de la atención a domicilio]"
+                    ]
+                },
+                {
+                    "title": "¿Es una urgencia?",
+                    "paragraphs": [
+                        "La clínica no realiza urgencias. Si tu mascota está grave, no esperes: llamá a una de las clínicas de guardia que te dejamos más abajo."
+                    ]
+                }
+            ],
+            "faq": [
+                {
+                    "q": "¿Cómo pido una visita a domicilio?",
+                    "a": "Escribile por WhatsApp al MV Cristian López, al 342 613-1922, contándole qué le pasa a tu mascota y tu dirección."
+                },
+                {
+                    "q": "¿Es el mismo número de la clínica?",
+                    "a": "No. La atención a domicilio se coordina directo con el MV Cristian López, que tiene su propio número: 342 613-1922."
+                },
+                {
+                    "q": "¿A qué zonas va?",
+                    "a": "[A CONFIRMAR: zonas que cubre la atención a domicilio]"
+                },
+                {
+                    "q": "¿Atienden urgencias a domicilio?",
+                    "a": "La clínica no realiza urgencias. Para una urgencia, comunicate con una de las clínicas de guardia de la lista."
+                }
+            ]
+        },
+        "vacunacion-perros-gatos-santo-tome": {
+            "service": "vacunacion",
+            "breadcrumb": "Vacunación",
+            "title": "Vacunación de perros y gatos en Santo Tomé | La Guardia",
+            "description": "Vacunación para perros y gatos en Santo Tomé, sin turno y por orden de llegada. Te avisamos por WhatsApp cuando toca la próxima vacuna.",
+            "h1": "Vacunación para perros y gatos en Santo Tomé",
+            "lead": "Vacunamos a tu perro o gato sin turno, por orden de llegada. Y después te avisamos por WhatsApp cuando le toca la próxima, para que no se te pase.",
+            "cta": "Consultar por vacunas",
+            "wa_service": "vacunación",
+            "facts": [
+                "Sin turno · por orden de llegada",
+                "Recordatorio por WhatsApp"
+            ],
+            "sections": [
+                {
+                    "title": "Por qué vacunar",
+                    "paragraphs": [
+                        "Las vacunas protegen a tu mascota de enfermedades contagiosas que pueden ser graves, y también cuidan a los otros animales y a las personas de la casa.",
+                        "En Argentina la vacuna antirrábica es obligatoria para perros y gatos."
+                    ]
+                },
+                {
+                    "title": "Un calendario para cada mascota",
+                    "paragraphs": [
+                        "No todos necesitan lo mismo: depende de la edad, de si sale a la calle o convive con otros animales, y de las vacunas que ya tiene. En la consulta el veterinario revisa a tu mascota y te arma el calendario.",
+                        "Si es un cachorro o un gatito, consultanos apenas llegue a casa: las primeras vacunas se dan de muy chiquitos."
+                    ]
+                },
+                {
+                    "title": "Qué traer",
+                    "list": [
+                        "La libreta sanitaria o el carnet de vacunas, si tiene.",
+                        "Perros con collar y correa; gatos en transportadora.",
+                        "Si está tomando algún medicamento o estuvo enfermo hace poco, contanos."
+                    ]
+                },
+                {
+                    "title": "Te avisamos la próxima",
+                    "paragraphs": [
+                        "Después de vacunar, te escribimos por WhatsApp cuando se acerca la próxima dosis. Es una de las cosas que más valoran quienes ya nos conocen."
+                    ]
+                }
+            ],
+            "faq": [
+                {
+                    "q": "¿Necesito turno para vacunar?",
+                    "a": "No. Atendemos sin turno, por orden de llegada, de lunes a viernes."
+                },
+                {
+                    "q": "¿Qué tengo que traer?",
+                    "a": "La libreta sanitaria o el carnet de vacunas, si tiene. Los perros con correa y los gatos en transportadora."
+                },
+                {
+                    "q": "¿Me avisan cuándo toca la próxima vacuna?",
+                    "a": "Sí, te avisamos por WhatsApp cuando se acerca la próxima dosis."
+                },
+                {
+                    "q": "¿Desde qué edad se vacuna?",
+                    "a": "Depende de la especie y de cada caso. Consultanos apenas tengas a tu cachorro o gatito y el veterinario te indica cuándo empezar."
+                },
+                {
+                    "q": "¿La vacuna antirrábica es obligatoria?",
+                    "a": "Sí. En Argentina la vacuna antirrábica es obligatoria para perros y gatos."
+                }
+            ]
+        }
+    },
+    "credits": {
+        "label": "Hecho por Web Wisse",
+        "url": "[A CONFIRMAR: URL de Web Wisse]"
+    }
+}
