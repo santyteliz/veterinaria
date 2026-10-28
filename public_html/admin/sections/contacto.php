@@ -4,13 +4,13 @@ declare(strict_types=1);
 function section_render(array $data): void
 {
     $c = $data['contact'] ?? [];
-    $v = $data['home_visits'] ?? [];
     echo form_open('contacto');
     ?>
     <div class="panel">
       <h2 class="panel__title">Clínica</h2>
       <?= field_text('whatsapp', $c['whatsapp'] ?? '', 'WhatsApp de la clínica', ['inputmode' => 'tel', 'required' => true, 'hint' => 'Podés escribirlo como “342 486-0753”: lo pasamos solo al formato de WhatsApp.']) ?>
       <?= field_text('phone_display', $c['phone_display'] ?? '', 'Teléfono (como se muestra)', ['inputmode' => 'tel', 'placeholder' => '342 486-0753']) ?>
+      <?= field_text('phone_note', $c['phone_note'] ?? '', 'Aclaración del teléfono (opcional)', ['maxlength' => 120, 'hint' => 'Ej.: “También para llamadas, pero preferimos que nos escribas”.']) ?>
       <?= field_text('email', $c['email'] ?? '', 'Email', ['type' => 'email', 'inputmode' => 'email']) ?>
     </div>
 
@@ -30,13 +30,7 @@ function section_render(array $data): void
     <div class="panel">
       <h2 class="panel__title">Redes</h2>
       <?= field_text('instagram', $c['instagram'] ?? '', 'Instagram', ['type' => 'url']) ?>
-      <?= field_text('facebook', $c['facebook'] ?? '', 'Facebook', ['type' => 'url']) ?>
-    </div>
-
-    <div class="panel">
-      <h2 class="panel__title">Atención a domicilio</h2>
-      <?= field_text('visit_vet', $v['vet'] ?? '', 'Veterinario', ['maxlength' => 80]) ?>
-      <?= field_text('visit_phone', $v['phone_display'] ?? '', 'Su WhatsApp / teléfono', ['inputmode' => 'tel', 'placeholder' => '342 613-1922']) ?>
+      <?= field_text('facebook', $c['facebook'] ?? '', 'Facebook (opcional)', ['type' => 'url', 'hint' => 'Dejalo vacío si no usan Facebook: el ícono no aparece en la web.']) ?>
     </div>
     <?php
     echo form_close();
@@ -62,12 +56,12 @@ function section_save(array $data): array
         $geo = ['lat' => $m[1], 'lng' => $m[2]];
     }
     $display = clean_line(posted('phone_display'), 30);
-    $visitPhone = clean_line(posted('visit_phone'), 30);
 
     $data['contact'] = array_merge($data['contact'] ?? [], [
         'whatsapp' => $wa,
         'phone_display' => $display,
         'phone' => tel_from_display($display),
+        'phone_note' => clean_line(posted('phone_note'), 120),
         'email' => $email,
         'address' => clean_line(posted('address'), 100),
         'address_note' => clean_line(posted('address_note'), 120),
@@ -79,17 +73,5 @@ function section_save(array $data): array
         'instagram' => clean_url(posted('instagram')),
         'facebook' => clean_url(posted('facebook')),
     ]);
-    $data['home_visits'] = [
-        'vet' => clean_line(posted('visit_vet'), 80),
-        'whatsapp' => $visitPhone !== '' ? normalize_whatsapp($visitPhone) : '',
-        'phone' => tel_from_display($visitPhone),
-        'phone_display' => $visitPhone,
-    ];
-    // El servicio "Atención a domicilio" usa el número del veterinario.
-    foreach ($data['services'] ?? [] as $i => $s) {
-        if (($s['id'] ?? '') === 'domicilio') {
-            $data['services'][$i]['whatsapp'] = $data['home_visits']['whatsapp'];
-        }
-    }
     return [$data, '¡Listo! Datos de contacto actualizados.'];
 }

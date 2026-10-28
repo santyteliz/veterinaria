@@ -568,6 +568,9 @@ button { cursor: pointer; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .hero__trust { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); font-size: var(--fs-small); color: var(--plum-300); }
 .hero__trust strong { font-family: var(--font-display); font-size: 1.5rem; color: var(--lilac-50); }
+.hero__trust--hours { gap: var(--space-2); font-size: 0.9375rem; color: var(--plum-200); }
+.hero__trust--hours .icon { color: var(--magenta-500); }
+.hero__trust--hours strong { font-family: var(--font-body); font-size: inherit; font-weight: 700; }
 
 .hero__visual {
   position: relative;
@@ -691,11 +694,26 @@ html.lenis { scroll-behavior: auto; }
 
 /* ---- Servicios ---------------------------------------------------------- */
 
+/* Grupos ("La clínica", "Farmacia, pet shop y peluquería"): 4 columnas en desktop. */
+.service-group + .service-group { margin-top: clamp(3rem, 2rem + 3vw, 4.5rem); }
+.service-group__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgb(27 6 38 / 0.18);
+  font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  color: var(--plum-950);
+}
+.service-group__title .cross { width: 1.125rem; height: 1.125rem; color: var(--plum-950); }
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.5rem), 1fr));
   gap: var(--space-4);
 }
+@media (min-width: 1200px) { .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 .card {
   position: relative;
@@ -709,8 +727,8 @@ html.lenis { scroll-behavior: auto; }
 .service {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  padding: var(--space-8);
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-6) var(--space-6);
   transition: transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out);
 }
 .service:hover, .service:focus-within { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
@@ -742,9 +760,37 @@ html.lenis { scroll-behavior: auto; }
   color: var(--magenta-700);
 }
 .service__icon .icon { width: 1.75rem; height: 1.75rem; }
-.service__title { font-size: 1.625rem; }
-.service__text { color: var(--text-on-light-2); }
-.service__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-2); }
+.service__icon { margin-bottom: var(--space-2); }
+.service__title { font-size: 1.375rem; line-height: 1.15; }
+.service__text { font-size: 0.9375rem; line-height: 1.55; color: var(--text-on-light-2); }
+.service__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-4);
+}
+.service__actions .link-arrow, .service__actions .link-btn { min-height: 2.75rem; font-size: 0.875rem; }
+
+/* Celular: cards en formato fila (ícono al costado) para que 12 servicios no sean una lista eterna. */
+@media (max-width: 639px) {
+  .cards { gap: var(--space-3); }
+  .service {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--space-4);
+    row-gap: var(--space-1);
+    padding: var(--space-5, 1.25rem);
+  }
+  .service__icon { grid-row: span 2; width: 3rem; height: 3rem; margin: 0; border-radius: 14px; }
+  .service__icon .icon { width: 1.5rem; height: 1.5rem; }
+  .service__title { font-size: 1.1875rem; align-self: end; }
+  .service__text { font-size: 0.875rem; }
+  .service__actions { grid-column: 1 / -1; padding-top: var(--space-3); }
+  .service__cross { width: 7rem; height: 7rem; top: -1.75rem; right: -1.75rem; }
+}
 
 /* ---- Cómo atendemos ----------------------------------------------------- */
 
@@ -777,6 +823,9 @@ html.lenis { scroll-behavior: auto; }
 /* ---- Peluquería: antes / después --------------------------------------- */
 
 .ba-list { display: grid; gap: var(--space-4); width: 100%; }
+/* Varios pares: lado a lado y en vertical (así no se estira la sección). */
+@media (min-width: 640px) { .ba-list--multi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ba-list--multi .ba__frame { aspect-ratio: 3 / 4; }
 
 .ba { margin: 0; }
 .ba__frame {
@@ -852,7 +901,7 @@ html.lenis { scroll-behavior: auto; }
 .shop {
   display: grid;
   /* auto-fit: con 4 ítems ocupan todo el ancho (auto-fill dejaba una columna vacía). */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
   gap: var(--space-4);
 }
 .shop__item {
@@ -864,14 +913,61 @@ html.lenis { scroll-behavior: auto; }
 .shop__media { aspect-ratio: 4 / 3; }
 .shop__media .shop__img { width: 100%; height: 100%; object-fit: cover; }
 .shop__body { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-6); }
-.shop__title { font-size: 1.375rem; }
+.shop__title { font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.375rem); }
+@media (max-width: 639px) { .shop__body { padding: var(--space-4); } .shop__body .link-arrow { font-size: 0.875rem; } }
+
+.section-head--row > .shop-info { display: flex; flex-direction: column; gap: var(--space-3); flex: 0 1 28rem; max-width: 28rem; }
+#pet-shop .section-head--row > div:first-child { flex: 1 1 24rem; }
+.shop-info__ship {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--plum-50);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--plum-800);
+}
+.shop-info__ship .icon { margin-top: 0.1em; color: var(--magenta-600); }
+
+/* Marcas de balanceado: tira de "etiquetas" debajo de la grilla. */
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+  padding: var(--space-6);
+  border: 1px solid var(--plum-100);
+  border-radius: var(--radius-lg);
+  background: var(--plum-50);
+}
+.brands__label {
+  font-size: var(--fs-overline);
+  font-weight: 700;
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.brands__list { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; }
+.brands__list li {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  border: 1px solid var(--plum-200);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--plum-900);
+}
 
 /* ---- Pacientitos -------------------------------------------------------- */
 
 .gallery { columns: 2; column-gap: var(--space-4); }
 @media (min-width: 900px) { .gallery { columns: 3; } }
 .gallery__item { break-inside: avoid; margin-bottom: var(--space-4); }
-.gallery__item figure { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-lg); }
+.gallery__item figure { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-lg); background: var(--plum-800); }
 .gallery__item--1 figure { aspect-ratio: 4 / 5; }
 .gallery__item--2 figure { aspect-ratio: 1; }
 .gallery__item--3 figure { aspect-ratio: 3 / 4; }
@@ -892,47 +988,62 @@ html.lenis { scroll-behavior: auto; }
 
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
-  gap: var(--space-8) var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-8) var(--space-4);
 }
-.team__card { display: flex; flex-direction: column; gap: var(--space-2); }
+@media (min-width: 640px) { .team { gap: var(--space-8) var(--space-6); } }
+@media (min-width: 1100px) { .team { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.team__card { display: flex; flex-direction: column; gap: var(--space-4); }
 .team__photo {
   position: relative;
   aspect-ratio: 4 / 5;
-  margin-bottom: var(--space-3);
   overflow: hidden;
   border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
 }
 .team__photo .team__img { width: 100%; height: 100%; object-fit: cover; }
-.team__badge { position: absolute; right: var(--space-4); bottom: var(--space-4); width: 2.75rem; height: 2.75rem; color: var(--magenta-500); filter: drop-shadow(0 4px 10px rgb(27 6 38 / 0.4)); }
-.team__name { font-size: 1.5rem; }
-.team__role { font-size: var(--fs-small); font-weight: 700; color: var(--accent-text); }
-.team__bio { color: var(--text-on-light-2); }
+.team__badge { position: absolute; right: var(--space-4); bottom: var(--space-4); width: 2.5rem; height: 2.5rem; color: var(--magenta-500); filter: drop-shadow(0 4px 10px rgb(27 6 38 / 0.4)); }
 
-.visit {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-6);
-  margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
-  padding: var(--space-8);
-  border-radius: var(--radius-xl);
-  background: var(--white);
-  border: 2px solid var(--plum-200);
-}
-.visit__icon {
+/* Sin foto: avatar con iniciales y la cruz de la marca de fondo, en 4 tonos. */
+.team__photo--avatar {
   display: grid;
   place-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 20px;
-  background: var(--magenta-500);
-  color: var(--plum-950);
+  background: radial-gradient(circle at 70% 20%, rgb(232 65 154 / 0.45), transparent 55%), var(--plum-900);
+  isolation: isolate;
 }
-.visit__icon .icon { width: 2rem; height: 2rem; }
-.visit__copy { flex: 1 1 20rem; display: flex; flex-direction: column; gap: var(--space-2); }
-.visit__copy p { color: var(--text-on-light-2); }
-.visit__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.team__photo--avatar::before {
+  content: "";
+  position: absolute;
+  inset: 18% 14%;
+  z-index: -1;
+  background: currentColor;
+  opacity: 0.08;
+  -webkit-mask: url("../img/cross-mask.svg") center / contain no-repeat;
+  mask: url("../img/cross-mask.svg") center / contain no-repeat;
+}
+.team__photo--avatar { color: var(--lilac-50); }
+.team__photo--2 { background: radial-gradient(circle at 30% 20%, rgb(255 239 255 / 0.35), transparent 55%), var(--magenta-500); color: var(--plum-950); }
+.team__photo--2 .team__badge { color: var(--plum-950); }
+.team__photo--3 { background: radial-gradient(circle at 70% 80%, rgb(232 65 154 / 0.4), transparent 55%), var(--plum-700); }
+.team__photo--4 { background: radial-gradient(circle at 30% 80%, rgb(255 239 255 / 0.25), transparent 55%), var(--magenta-800); }
+.team__initials {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 2.5rem + 3vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.team__body { display: flex; flex-direction: column; gap: var(--space-1); }
+.team__role { font-size: var(--fs-overline); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+.team__name { font-size: clamp(1.125rem, 0.95rem + 0.8vw, 1.5rem); }
+@media (max-width: 639px) {
+  .team__bio { font-size: 0.875rem; }
+  .team__role { font-size: 0.6875rem; letter-spacing: 0.04em; }
+  .team__badge { width: 1.75rem; height: 1.75rem; right: var(--space-3); bottom: var(--space-3); }
+}
+.team__detail { font-size: var(--fs-small); font-weight: 600; color: var(--plum-600); }
+.team__bio { margin-top: var(--space-2); color: var(--text-on-light-2); }
 
 /* ---- Reseñas ------------------------------------------------------------ */
 
@@ -985,9 +1096,10 @@ html.lenis { scroll-behavior: auto; }
 .emergency__icon .icon { width: 1.875rem; height: 1.875rem; }
 .emergency__list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.25rem), 1fr));
   gap: var(--space-3);
 }
+@media (min-width: 1024px) { .emergency__list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .emergency__item {
   display: flex;
   flex-direction: column;
@@ -1003,7 +1115,8 @@ html.lenis { scroll-behavior: auto; }
 }
 .emergency__item:hover { background: var(--plum-700); }
 .emergency__name { font-size: 0.8125rem; color: var(--plum-300); }
-.emergency__phone { font-size: 1.1875rem; font-weight: 700; letter-spacing: 0.01em; }
+.emergency__phone { font-size: clamp(1rem, 0.9rem + 0.4vw, 1.1875rem); font-weight: 700; letter-spacing: 0.01em; white-space: nowrap; }
+@media (max-width: 639px) { .emergency__item { padding: var(--space-3) var(--space-4); } }
 .emergency__call { display: inline-flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); font-size: var(--fs-small); font-weight: 700; color: var(--magenta-300); }
 .emergency__call .icon { width: 1rem; height: 1rem; }
 
@@ -1024,8 +1137,14 @@ html.lenis { scroll-behavior: auto; }
   font-weight: 700;
 }
 
-.address { display: flex; gap: var(--space-3); color: var(--plum-200); }
-.address .icon { margin-top: 0.2em; color: var(--magenta-500); }
+.hours .is-closed td { color: var(--plum-400); }
+
+/* Datos de contacto debajo de los horarios. */
+.contact-list { display: flex; flex-direction: column; gap: var(--space-4); width: 100%; list-style: none; }
+.contact-list li { display: flex; gap: var(--space-3); color: var(--plum-200); line-height: 1.5; }
+.contact-list strong { color: var(--lilac-50); }
+.contact-list .icon { margin-top: 0.15em; color: var(--magenta-500); }
+.contact-list a { color: var(--lilac-50); text-underline-offset: 3px; }
 
 .map {
   position: relative;
@@ -1041,6 +1160,15 @@ html.lenis { scroll-behavior: auto; }
 .map__streets { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--plum-700); }
 .map__pin { position: relative; width: 4.5rem; height: 4.5rem; filter: drop-shadow(0 12px 24px rgb(0 0 0 / 0.5)); }
 .map__pin .cross { width: 100%; height: 100%; color: var(--magenta-500); }
+.map__address {
+  position: absolute;
+  top: calc(50% + 3.25rem);
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-pill);
+  background: rgb(27 6 38 / 0.85);
+  font-weight: 700;
+  font-size: var(--fs-small);
+}
 .map__button { position: absolute; bottom: var(--space-8); }
 .map__note { position: absolute; bottom: var(--space-3); font-size: 0.75rem; color: var(--plum-300); }
 
@@ -1074,7 +1202,7 @@ html.lenis { scroll-behavior: auto; }
 .site-footer__grid { display: grid; gap: var(--space-12) var(--space-8); }
 @media (min-width: 900px) { .site-footer__grid { grid-template-columns: 1.4fr 1fr 1fr; } }
 .site-footer__brand { display: flex; flex-direction: column; gap: var(--space-4); max-width: 24rem; color: var(--plum-200); }
-.site-footer__brand img { border-radius: 18px; }
+.site-footer__logo { width: 12.5rem; height: auto; }
 .site-footer__warn { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-weight: 600; color: var(--lilac-50); }
 .site-footer__warn .icon { color: var(--magenta-300); }
 .site-footer__warn a { color: var(--magenta-300); }
@@ -1096,12 +1224,18 @@ html.lenis { scroll-behavior: auto; }
 .site-footer__list--plain strong { display: block; color: var(--lilac-50); }
 .site-footer__social { display: flex; gap: var(--space-2); margin-top: var(--space-6); }
 .site-footer__social a {
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
   border: 1px solid var(--plum-600);
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
 }
 .site-footer__social a:hover { background: var(--magenta-500); border-color: var(--magenta-500); color: var(--plum-950); }
 .site-footer__bottom {

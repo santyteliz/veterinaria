@@ -60,7 +60,7 @@ require __DIR__ . '/inc/layout-start.php';
       <ul>
         <li><strong>Google Maps.</strong> El mapa se carga recién cuando tocás “Ver mapa”. A partir de ahí, Google puede usar cookies según su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad</a>.</li>
         <li><strong>WhatsApp.</strong> Las conversaciones se rigen por la <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">política de privacidad de WhatsApp</a>.</li>
-        <li><strong>Instagram y Facebook.</strong> Son links a nuestras redes. Al abrirlos, aplica la <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">política de Meta</a>.</li>
+        <li><strong>Instagram.</strong> Es un link a nuestra cuenta. Al abrirlo, aplica la <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">política de privacidad de Instagram</a>.</li>
       </ul>
 
       <h2>Estadísticas de visitas</h2>

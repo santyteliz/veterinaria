@@ -78,12 +78,6 @@ function wa_message(string $service): string
     return str_replace('{servicio}', $service, (string) c('whatsapp_template'));
 }
 
-/** Mensaje para el veterinario a domicilio (es otro número: no se saluda a "La Guardia"). */
-function wa_message_visit(): string
-{
-    return '¡Hola! Te escribo desde la web de La Guardia. Quiero consultar por atención a domicilio. Mascota: ____ · Motivo: ____ · Barrio: ____';
-}
-
 function wa_url(string $message = '', string $number = ''): string
 {
     $number = preg_replace('/\D+/', '', $number !== '' ? $number : (string) c('contact.whatsapp'));

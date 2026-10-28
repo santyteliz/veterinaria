@@ -2,21 +2,33 @@
 declare(strict_types=1);
 
 const SERVICE_ICONS = [
-    'stethoscope' => 'Estetoscopio (clínica)',
+    'stethoscope' => 'Estetoscopio (consultorio)',
     'syringe' => 'Jeringa (vacunas)',
-    'scissors' => 'Tijera (peluquería)',
-    'bag' => 'Bolsa (pet shop)',
+    'scalpel' => 'Bisturí (cirugías)',
+    'tooth' => 'Diente (dental)',
+    'flask' => 'Probeta (análisis)',
+    'wave' => 'Monitor (ecografías)',
+    'chip' => 'Chip (microchip)',
+    'doc' => 'Documento (certificados)',
     'pill' => 'Pastilla (farmacia)',
     'bowl' => 'Plato (alimento)',
-    'home' => 'Casa (domicilio)',
+    'bag' => 'Bolsa (pet shop)',
+    'scissors' => 'Tijera (peluquería)',
+    'home' => 'Casa (envíos)',
     'phone' => 'Teléfono',
     'clock' => 'Reloj',
     'star' => 'Estrella',
 ];
 
+const SERVICE_GROUPS = [
+    'clinica' => 'La clínica',
+    'tienda' => 'Farmacia, pet shop y peluquería',
+];
+
 function service_row(string $key, array $s): string
 {
     $visible = !array_key_exists('visible', $s) || !empty($s['visible']);
+    $groups = SERVICE_GROUPS;
     ob_start();
     ?>
     <div class="row<?= $visible ? '' : ' is-hidden-service' ?>">
@@ -28,7 +40,10 @@ function service_row(string $key, array $s): string
       <?= str_replace('<input', '<input data-visible-toggle', field_check("services[{$key}][visible]", $visible, 'Mostrar en la web')) ?>
       <?= str_replace('<input', '<input data-row-name', field_text("services[{$key}][name]", $s['name'] ?? '', 'Nombre', ['maxlength' => 50, 'required' => true])) ?>
       <?= field_textarea("services[{$key}][description]", $s['description'] ?? '', 'Descripción', ['maxlength' => 180, 'rows' => 3]) ?>
-      <?= field_select("services[{$key}][icon]", $s['icon'] ?? 'stethoscope', 'Ícono', SERVICE_ICONS) ?>
+      <div class="grid-2">
+        <?= field_select("services[{$key}][group]", $s['group'] ?? 'clinica', 'Grupo', $groups) ?>
+        <?= field_select("services[{$key}][icon]", $s['icon'] ?? 'stethoscope', 'Ícono', SERVICE_ICONS) ?>
+      </div>
       <?= field_text("services[{$key}][cta]", $s['cta'] ?? '', 'Texto del botón (opcional)', ['maxlength' => 30, 'placeholder' => 'Consultar']) ?>
     </div>
     <?php
@@ -82,6 +97,7 @@ function section_save(array $data): array
             'name' => $name,
             'description' => clean_line($row['description'] ?? '', 180),
             'icon' => array_key_exists($row['icon'] ?? '', SERVICE_ICONS) ? $row['icon'] : 'stethoscope',
+            'group' => array_key_exists($row['group'] ?? '', SERVICE_GROUPS) ? $row['group'] : 'clinica',
             'visible' => !empty($row['visible']),
         ]);
         $cta = clean_line($row['cta'] ?? '', 30);

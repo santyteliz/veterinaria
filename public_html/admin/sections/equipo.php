@@ -13,6 +13,7 @@ function member_row(string $key, array $m): string
       <?= field_photo("team_photo[{$key}]", "team[{$key}][photo]", "team[{$key}][photo_remove]", (string) ($m['photo'] ?? ''), 'Foto') ?>
       <?= str_replace('<input', '<input data-row-name', field_text("team[{$key}][name]", $m['name'] ?? '', 'Nombre', ['maxlength' => 60, 'required' => true])) ?>
       <?= field_text("team[{$key}][role]", $m['role'] ?? '', 'Rol', ['maxlength' => 60, 'placeholder' => 'Ej.: Médico veterinario']) ?>
+      <?= field_text("team[{$key}][detail]", $m['detail'] ?? '', 'Matrícula u otro dato (opcional)', ['maxlength' => 60, 'placeholder' => 'Ej.: Mat. Prof. 2312']) ?>
       <?= field_textarea("team[{$key}][bio]", $m['bio'] ?? '', 'Presentación', ['maxlength' => 280, 'rows' => 3]) ?>
     </div>
     <?php
@@ -57,6 +58,7 @@ function section_save(array $data): array
         $team[] = [
             'name' => $name,
             'role' => clean_line($row['role'] ?? '', 60),
+            'detail' => clean_line($row['detail'] ?? '', 60),
             'bio' => clean_line($row['bio'] ?? '', 280),
             'photo' => $photo,
         ];

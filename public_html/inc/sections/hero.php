@@ -22,13 +22,16 @@ $reviews = c('reviews', []);
         </a>
         <a class="btn btn--ghost-light btn--lg" href="#servicios">Ver servicios</a>
       </div>
-      <?php if (!empty($reviews['rating'])): ?>
+      <?php /* El puntaje de Google solo se muestra cuando el cliente lo confirma en el panel; mientras tanto, el horario. */ ?>
+      <?php if (!empty($reviews['rating']) && !empty($reviews['verified'])): ?>
         <p class="hero__trust" data-hero-fade>
-          <?php /* El contador animado solo corre con datos confirmados en la ficha de Google. */ ?>
-          <strong><span<?= !empty($reviews['verified']) ? ' data-count-to="' . e(number_format((float) $reviews['rating'], 1, '.', '')) . '"' : '' ?>><?= e(number_format((float) $reviews['rating'], 1, ',', '')) ?></span> <span aria-hidden="true">★</span></strong>
+          <strong><span data-count-to="<?= e(number_format((float) $reviews['rating'], 1, '.', '')) ?>"><?= e(number_format((float) $reviews['rating'], 1, ',', '')) ?></span> <span aria-hidden="true">★</span></strong>
           <span>en Google<?php if (!empty($reviews['count'])): ?> · <?= e((int) $reviews['count']) ?> reseñas<?php endif; ?></span>
-          <?php if (empty($reviews['verified'])): ?><mark class="tbc">[A CONFIRMAR: con la ficha oficial de Google]</mark><?php endif; ?>
         </p>
+      <?php else: $firstRow = hours_summary()[0] ?? null; ?>
+        <?php if ($firstRow && !$firstRow['closed']): ?>
+          <p class="hero__trust hero__trust--hours" data-hero-fade><?= icon('clock') ?><span><strong><?= e($firstRow['days']) ?></strong> · <?= e($firstRow['hours']) ?></span></p>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
 

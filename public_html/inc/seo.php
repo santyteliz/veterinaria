@@ -71,7 +71,7 @@ function schema_business(): array
         '@id' => site_url('/#clinica'),
         'name' => c('site.name'),
         'url' => site_url('/'),
-        'logo' => site_url('/assets/img/logo-la-guardia-150.png'),
+        'logo' => site_url('/assets/img/logo-cruz-512.png'),
         'image' => site_url('/assets/img/og-la-guardia.jpg'),
         'description' => schema_text(c('seo.home.description')),
         'telephone' => $contact['phone'] ?? '',

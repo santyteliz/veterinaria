@@ -32,7 +32,7 @@ function admin_header(string $title, string $active = '', bool $chrome = true): 
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#2C0C3D">
 <title><?= e($title) ?> · Panel La Guardia</title>
-<link rel="icon" href="/assets/img/logo-la-guardia-150.png" type="image/png">
+<link rel="icon" href="/assets/img/favicon-48.png" type="image/png">
 <link rel="stylesheet" href="<?= asset('css/tokens.css') ?>">
 <link rel="stylesheet" href="<?= admin_asset('admin.css') ?>">
 <script src="<?= admin_asset('admin.js') ?>" defer></script>
@@ -41,7 +41,7 @@ function admin_header(string $title, string $active = '', bool $chrome = true): 
 <?php if ($chrome): ?>
 <header class="topbar">
   <a class="topbar__brand" href="/admin/">
-    <img src="/assets/img/logo-la-guardia-150.png" alt="" width="36" height="36">
+    <img src="/assets/img/logo-cruz-128.webp" alt="" width="36" height="36">
     <span>Panel <strong>La Guardia</strong></span>
   </a>
   <a class="btn btn--light btn--sm" href="/" target="_blank" rel="noopener">Ver sitio ↗</a>

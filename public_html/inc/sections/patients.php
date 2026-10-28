@@ -20,7 +20,8 @@ if ($isPlaceholder) {
 
     <ul class="gallery<?= $isPlaceholder ? ' gallery--empty' : '' ?>" role="list">
       <?php foreach ($patients as $i => $p): ?>
-        <li class="gallery__item gallery__item--<?= $i % 3 + 1 ?>" data-reveal>
+        <?php /* Alturas rotadas por columna (1-2-3, 2-3-1, 3-1-2): mosaico escalonado, columnas parejas. */ ?>
+        <li class="gallery__item gallery__item--<?= ($i + intdiv($i, 3)) % 3 + 1 ?>" data-reveal>
           <figure>
             <?= img_or_placeholder((string) ($p['image'] ?? ''), (string) ($p['alt'] ?? ($p['name'] ?? 'Pacientito')), 'foto de pacientito', 'gallery__img', true, '(min-width: 900px) 33vw, 50vw') ?>
             <?php if (!empty($p['name'])): ?><figcaption><?= e($p['name']) ?></figcaption><?php endif; ?>

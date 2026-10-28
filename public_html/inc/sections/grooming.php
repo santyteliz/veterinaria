@@ -24,7 +24,7 @@ if (!$pairs) {
       </a>
     </div>
 
-    <div class="ba-list">
+    <div class="ba-list<?= count($pairs) > 1 ? ' ba-list--multi' : '' ?>">
       <?php foreach ($pairs as $i => $pair): ?>
         <figure class="ba" data-ba>
           <div class="ba__frame">

@@ -19,19 +19,23 @@ visibles y HTTPS/compresión/cache (esos solo se pueden probar en el sitio publi
 La web muestra un recuadro `[A CONFIRMAR: …]` donde falta un dato. Ninguno se publica en los
 datos estructurados para Google, pero hay que completarlos antes de anunciar la web.
 
+Confirmado por la clínica el 27/10/2026 y ya cargado: WhatsApp 342 486-0753 (también línea
+para llamadas), dirección Gaboto 2696, horarios (lunes a viernes 9 a 12 h y 17 a 20 h;
+sábados, domingos y feriados cerrado), email e Instagram (Facebook no lo usan), lista de
+servicios y cirugías, marcas de balanceado, envíos, peluquería tercerizada (Romina Manso),
+equipo (Ángel Emilio Nasso, Noelia, Tamara Silvetti, Romina Manso) y logos en alta. Cristian
+López ya no figura como servicio: solo como contacto de urgencias.
+
 - [ ] `SETUP_CODE` cambiado en `admin/config.php` (sin esto no se puede crear la contraseña).
-- [ ] WhatsApp de la clínica: confirmar que **342 486-0753** es WhatsApp (es el número de casi todos los botones).
-- [ ] Dirección exacta (Gaboto 2696 o Buenos Aires 2399) → panel › Contacto.
-- [ ] Horario de la tarde (17 a 20 h o 17 a 19:30 h) y si atienden sábados → panel › Horarios.
+- [ ] **Aprobar los textos de presentación del equipo** (los propuse yo, la clínica pidió que los redacte).
+- [ ] Fotos reales: hero, equipo, pacientitos, antes/después de peluquería y pet shop (hoy son de ejemplo).
+  Después, apagar el aviso "Versión de prueba" en panel › Aviso superior.
 - [ ] Coordenadas de la clínica → panel › Contacto (suma la ubicación exacta para Google).
-- [ ] Puntaje de Google confirmado en la ficha oficial → panel › Reseñas (marcar "Confirmé…").
+- [ ] Puntaje de Google confirmado en la ficha oficial → panel › Reseñas (marcar "Confirmé…"). Hasta entonces el hero muestra el horario.
 - [ ] Reseñas reales copiadas de Google y link "Ver todas" → panel › Reseñas.
-- [ ] Rol de Priscila y textos de presentación del equipo → panel › Equipo.
-- [ ] Fotos: hero (perro + gato), equipo y pacientitos → panel. Antes/después de peluquería y pet shop → `site.json`.
-- [ ] Servicios clínicos que realmente hacen (vacunación, desparasitación, etc.) → panel › Servicios.
-- [ ] Peluquería: detalle de lo que incluye · Pet shop: marcas y si hacen envíos · Domicilio: zonas y horarios → `site.json` (`pages`).
-- [ ] Nombres de las clínicas de guardia (hoy solo tiene nombre Azul Veterinaria 24 h) → panel › Clínicas de guardia.
+- [ ] Nombres de las clínicas de guardia (hoy solo tienen nombre Azul Veterinaria 24 h y Cristian López) → panel › Clínicas de guardia.
 - [ ] Razón social y CUIT del responsable → `politica-de-privacidad.php`. Revisión de la política por un abogado.
+- [ ] Que el veterinario confirme el texto de la página de vacunación (incluye "la antirrábica es obligatoria en Argentina").
 - [ ] URL de Web Wisse para el crédito del footer → `site.json` (`credits.url`).
 - [ ] Dominio definitivo: si no es `clinicalaguardia.com.ar`, cambiar `site.url` en `site.json`.
 
@@ -39,9 +43,9 @@ datos estructurados para Google, pero hay que completarlos antes de anunciar la 
 
 | Prueba | Local | Hostinger / celular |
 |---|---|---|
-| Todos los links `wa.me` van al número correcto (clínica o Cristian) | ✅ 19 en la home + 6 por página de servicio | [ ] |
+| Todos los links `wa.me` van al WhatsApp de la clínica | ✅ | [ ] |
 | Cada mensaje arranca con el saludo y nombra el servicio | ✅ | [ ] |
-| "Atención a domicilio" va al 342 613-1922 y no dice "¡Hola La Guardia!" | ✅ | [ ] |
+| Cristian López (a domicilio) figura solo en urgencias, con link `tel:` | ✅ | [ ] |
 | Links `tel:` con formato +54… | ✅ | [ ] |
 | Mini formulario "Armar mensaje" arma el texto con mascota, especie y motivo | ✅ | [ ] |
 
@@ -49,7 +53,6 @@ En el celular:
 
 - [ ] Tocar "Consultar por WhatsApp" del hero: abre la app con el mensaje listo.
 - [ ] Tocar "Consultar" de 2 o 3 servicios: el mensaje cambia según el servicio.
-- [ ] "Escribirle a Cristian" abre el chat de **su** número.
 - [ ] Botón flotante verde: abre WhatsApp.
 - [ ] "Llamar" en una clínica de guardia: abre el marcador con el número correcto.
 - [ ] "Cómo llegar": abre Google Maps en la clínica.

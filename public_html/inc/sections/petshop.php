@@ -1,8 +1,9 @@
 <?php
-/** Pet Shop y balanceados: grilla editable, sin e-commerce; cada ítem consulta stock. */
+/** Pet Shop, farmacia y balanceados: grilla editable, sin e-commerce; cada ítem consulta stock. */
 
 $shop = c('petshop', []);
 $items = (array) ($shop['items'] ?? []);
+$brands = (array) ($shop['brands'] ?? []);
 ?>
 <section class="section section--white" id="pet-shop" aria-labelledby="petshop-title">
   <div class="container">
@@ -11,7 +12,12 @@ $items = (array) ($shop['items'] ?? []);
         <p class="overline">Pet Shop</p>
         <h2 id="petshop-title"><?= e($shop['title'] ?? 'Pet Shop y balanceados') ?></h2>
       </div>
-      <p class="lead"><?= t($shop['text'] ?? '') ?><?php if (!empty($shop['brands_note'])): ?><br><?= t($shop['brands_note']) ?><?php endif; ?></p>
+      <div class="shop-info">
+        <p class="lead"><?= t($shop['text'] ?? '') ?></p>
+        <?php if (!empty($shop['shipping'])): ?>
+          <p class="shop-info__ship"><?= icon('home') ?><span><?= t($shop['shipping']) ?></span></p>
+        <?php endif; ?>
+      </div>
     </div>
 
     <ul class="shop" role="list">
@@ -29,5 +35,14 @@ $items = (array) ($shop['items'] ?? []);
         </li>
       <?php endforeach; ?>
     </ul>
+
+    <?php if ($brands): ?>
+      <div class="brands">
+        <p class="brands__label">Balanceados de las principales marcas</p>
+        <ul class="brands__list" role="list">
+          <?php foreach ($brands as $brand): ?><li><?= e($brand) ?></li><?php endforeach; ?>
+        </ul>
+      </div>
+    <?php endif; ?>
   </div>
 </section>

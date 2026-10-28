@@ -45,7 +45,7 @@ if ($codeReady && $_SERVER['REQUEST_METHOD'] === 'POST') {
 admin_header('Instalación', '', false);
 ?>
 <div class="auth">
-  <img class="auth__logo" src="/assets/img/logo-la-guardia-150.png" alt="Clínica Veterinaria La Guardia" width="88" height="88">
+  <img class="auth__logo" src="/assets/img/logo-completo-oscuro-480.webp" alt="Clínica Veterinaria La Guardia" width="180" height="154">
   <h1 class="page-title">Crear contraseña del panel</h1>
   <?php if (!$codeReady): ?>
     <div class="flash flash--error" role="alert">

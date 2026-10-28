@@ -23,7 +23,8 @@ $nav = [
 <title><?= e($page['title']) ?></title>
 <?= meta_tags($page) ?>
 <meta name="theme-color" content="#2C0C3D">
-<link rel="icon" href="/assets/img/logo-la-guardia-150.png" type="image/png">
+<link rel="icon" href="/assets/img/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <?php if ($isHome && ($heroImg = (string) c('hero.image')) !== ''): [$heroSrcset] = upload_srcset($heroImg); ?>
 <link rel="preload" as="image" href="<?= e($heroImg) ?>"<?= $heroSrcset !== '' ? ' imagesrcset="' . e($heroSrcset) . '" imagesizes="(min-width: 1024px) 36rem, 22rem"' : '' ?> fetchpriority="high">
 <?php endif; ?>
@@ -57,7 +58,7 @@ $nav = [
 <header class="site-header" data-header>
   <div class="site-header__inner container">
     <a class="brand" href="/" data-logo>
-      <img class="brand__logo" src="/assets/img/logo-la-guardia-104.webp" alt="" width="52" height="52">
+      <img class="brand__logo" src="/assets/img/logo-cruz-128.webp" alt="" width="52" height="52">
       <span class="brand__text"><small>Clínica veterinaria</small><strong>LA GUARDIA</strong></span>
     </a>
 

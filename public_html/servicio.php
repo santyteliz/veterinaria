@@ -23,12 +23,10 @@ foreach ((array) c('services', []) as $s) {
     }
 }
 $number = (string) ($service['whatsapp'] ?? '');
-$isVisit = ($p['service'] ?? '') === 'domicilio';
-$waUrl = wa_url($isVisit ? wa_message_visit() : wa_message((string) ($p['wa_service'] ?? $service['name'] ?? '')), $number);
+$waUrl = wa_url(wa_message((string) ($p['wa_service'] ?? $service['name'] ?? '')), $number);
 $path = '/' . $slug;
 $crumbs = [['Inicio', '/'], [(string) $p['breadcrumb'], $path]];
 $faq = (array) ($p['faq'] ?? []);
-$status = open_status();
 
 $page = [
     'title' => $p['title'],
@@ -63,11 +61,7 @@ require __DIR__ . '/inc/layout-start.php';
       <a class="btn btn--primary btn--lg btn--glow" href="<?= e($waUrl) ?>" data-magnetic data-track="whatsapp" data-track-label="pagina:<?= e($slug) ?>">
         <?= icon('whatsapp') ?> <?= e($p['cta']) ?>
       </a>
-      <?php if ($isVisit): ?>
-        <a class="btn btn--ghost-light btn--lg" href="tel:<?= e(c('home_visits.phone')) ?>" data-track="phone" data-track-label="pagina:<?= e($slug) ?>"><?= icon('phone') ?> <?= e(c('home_visits.phone_display')) ?></a>
-      <?php else: ?>
-        <a class="btn btn--ghost-light btn--lg" href="<?= e(maps_directions_url()) ?>" target="_blank" rel="noopener" data-track="directions" data-track-label="pagina:<?= e($slug) ?>"><?= icon('pin') ?> Cómo llegar</a>
-      <?php endif; ?>
+      <a class="btn btn--ghost-light btn--lg" href="<?= e(maps_directions_url()) ?>" target="_blank" rel="noopener" data-track="directions" data-track-label="pagina:<?= e($slug) ?>"><?= icon('pin') ?> Cómo llegar</a>
     </div>
   </div>
 </section>
@@ -91,22 +85,16 @@ require __DIR__ . '/inc/layout-start.php';
     </article>
 
     <aside class="page-aside" aria-label="Datos de contacto">
-      <?php if ($isVisit): ?>
-        <h2 class="page-aside__title">Atención a domicilio</h2>
-        <p class="page-aside__big"><?= e(c('home_visits.vet')) ?></p>
-        <p>Coordiná directo con él por WhatsApp o por teléfono.</p>
-      <?php else: ?>
-        <h2 class="page-aside__title">Horarios</h2>
-        <p class="status-line <?= $status['open'] ? 'is-open' : 'is-closed' ?>"><span class="status__dot" aria-hidden="true"></span><?= e($status['label']) ?></p>
-        <ul class="page-aside__hours" role="list">
-          <?php foreach (hours_summary() as $row): ?>
-            <li><span><?= e($row['days']) ?></span><strong><?= e($row['hours']) ?></strong></li>
-          <?php endforeach; ?>
-        </ul>
-        <p class="page-aside__note"><?= e(c('hours.note')) ?><?= ($p['service'] ?? '') === 'peluqueria' ? ' (peluquería con turno previo)' : '' ?></p>
-        <h2 class="page-aside__title">Dónde estamos</h2>
-        <address><?= e(c('contact.address')) ?>, <?= e(c('contact.city')) ?>, <?= e(c('contact.region')) ?></address>
-      <?php endif; ?>
+      <h2 class="page-aside__title">Horarios</h2>
+      <ul class="page-aside__hours" role="list">
+        <?php foreach (hours_summary() as $row): ?>
+          <li><span><?= e($row['days']) ?></span><strong><?= e($row['hours']) ?></strong></li>
+        <?php endforeach; ?>
+        <li><span>Feriados</span><strong>Cerrado</strong></li>
+      </ul>
+      <p class="page-aside__note"><?= e(c('hours.note')) ?><?= ($p['service'] ?? '') === 'peluqueria' ? ' · la peluquería, con turno por WhatsApp' : '' ?></p>
+      <h2 class="page-aside__title">Dónde estamos</h2>
+      <address><strong><?= e(c('contact.address')) ?></strong>, <?= e(c('contact.city')) ?>, <?= e(c('contact.region')) ?></address>
       <a class="btn btn--primary btn--block" href="<?= e($waUrl) ?>" data-track="whatsapp" data-track-label="aside:<?= e($slug) ?>"><?= icon('whatsapp') ?> <?= e($p['cta']) ?></a>
     </aside>
   </div>

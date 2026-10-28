@@ -10,8 +10,8 @@ $credits = (string) c('credits.url');
 <footer class="site-footer" id="footer">
   <div class="container site-footer__grid">
     <div class="site-footer__brand">
-      <img src="/assets/img/logo-la-guardia-150.webp" alt="Clínica Veterinaria La Guardia" width="88" height="88" loading="lazy" decoding="async">
-      <p>Clínica general, peluquería canina, pet shop y farmacia en <?= e(c('contact.city')) ?>, <?= e(c('contact.region')) ?>.</p>
+      <img class="site-footer__logo" src="/assets/img/logo-completo-claro-480.webp" alt="Clínica Veterinaria La Guardia" width="200" height="177" loading="lazy" decoding="async">
+      <p>Consultorio veterinario, cirugías, ecografías, farmacia, pet shop y balanceados en <?= e(c('contact.city')) ?>, <?= e(c('contact.region')) ?>.</p>
       <p class="site-footer__warn"><?= icon('alert') ?> No realizamos urgencias. <a href="/#urgencias">Ver clínicas de guardia</a></p>
     </div>
 
@@ -20,7 +20,9 @@ $credits = (string) c('credits.url');
       <ul class="site-footer__list">
         <li><?= icon('whatsapp') ?><a href="<?= e(wa_url(wa_message('una consulta general'))) ?>" data-track="whatsapp" data-track-label="footer">WhatsApp <?= e(c('contact.phone_display')) ?></a></li>
         <li><?= icon('phone') ?><a href="tel:<?= e(c('contact.phone')) ?>" data-track="phone" data-track-label="footer">Llamar <?= e(c('contact.phone_display')) ?></a></li>
-        <li><?= icon('mail') ?><a href="mailto:<?= e(c('contact.email')) ?>"><?= e(c('contact.email')) ?></a></li>
+        <?php if (c('contact.email') !== ''): ?>
+          <li><?= icon('mail') ?><a href="mailto:<?= e(c('contact.email')) ?>"><?= e(c('contact.email')) ?></a></li>
+        <?php endif; ?>
         <li><?= icon('pin') ?><a href="<?= e(maps_directions_url()) ?>" target="_blank" rel="noopener" data-track="directions" data-track-label="footer"><?= e(c('contact.address')) ?>, <?= e(c('contact.city')) ?></a></li>
       </ul>
     </div>
@@ -31,11 +33,17 @@ $credits = (string) c('credits.url');
         <?php foreach (hours_summary() as $row): ?>
           <li><span><?= e($row['days']) ?></span> <strong><?= e($row['hours']) ?></strong></li>
         <?php endforeach; ?>
+        <li><span>Feriados</span> <strong>Cerrado</strong></li>
         <li><?= e(c('hours.note')) ?></li>
       </ul>
+      <?php /* Solo las redes cargadas en el panel (hoy, Instagram). */ ?>
       <div class="site-footer__social">
-        <a href="<?= e(c('contact.instagram')) ?>" target="_blank" rel="noopener" aria-label="Instagram de La Guardia"><?= icon('instagram') ?></a>
-        <a href="<?= e(c('contact.facebook')) ?>" target="_blank" rel="noopener" aria-label="Facebook de La Guardia"><?= icon('facebook') ?></a>
+        <?php if (c('contact.instagram') !== ''): ?>
+          <a href="<?= e(c('contact.instagram')) ?>" target="_blank" rel="noopener" aria-label="Instagram de La Guardia"><?= icon('instagram') ?><span>@veterinaria_laguardia</span></a>
+        <?php endif; ?>
+        <?php if (c('contact.facebook') !== ''): ?>
+          <a href="<?= e(c('contact.facebook')) ?>" target="_blank" rel="noopener" aria-label="Facebook de La Guardia"><?= icon('facebook') ?></a>
+        <?php endif; ?>
       </div>
     </div>
   </div>
@@ -43,7 +51,7 @@ $credits = (string) c('credits.url');
   <div class="container site-footer__bottom">
     <p>© <?= date('Y') ?> <?= e(c('site.name')) ?></p>
     <p><a href="/politica-de-privacidad">Política de privacidad</a></p>
-    <p><?php if ($credits !== '' && !is_placeholder($credits)): ?><a href="<?= e($credits) ?>" target="_blank" rel="noopener"><?= e(c('credits.label')) ?></a><?php else: ?><?= e(c('credits.label')) ?> <?= t($credits) ?><?php endif; ?></p>
+    <p><?php if ($credits !== '' && !is_placeholder($credits)): ?><a href="<?= e($credits) ?>" target="_blank" rel="noopener"><?= e(c('credits.label')) ?></a><?php else: ?><?= e(c('credits.label')) ?><?php endif; ?></p>
   </div>
 </footer>
 
