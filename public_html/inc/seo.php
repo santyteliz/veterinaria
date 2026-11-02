@@ -88,7 +88,9 @@ function schema_business(): array
         'sameAs' => array_values(array_filter([$contact['instagram'] ?? '', $contact['facebook'] ?? ''])),
         'hasMap' => maps_directions_url(),
         'areaServed' => ['@type' => 'City', 'name' => ($contact['city'] ?? '') . ', ' . ($contact['region'] ?? '')],
-        'knowsAbout' => array_values(array_map(fn ($s) => $s['name'], array_filter((array) c('services', []), fn ($s) => !empty($s['visible'])))),
+        'paymentAccepted' => implode(', ', (array) c('payments.methods', [])),
+        'currenciesAccepted' => 'ARS',
+        'knowsAbout' =>array_values(array_map(fn ($s) => $s['name'], array_filter((array) c('services', []), fn ($s) => !empty($s['visible'])))),
     ];
 
     $lat = (string) ($contact['geo']['lat'] ?? '');

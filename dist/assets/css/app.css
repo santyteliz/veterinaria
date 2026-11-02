@@ -962,6 +962,136 @@ html.lenis { scroll-behavior: auto; }
   color: var(--plum-900);
 }
 
+/* ---- Socios y formas de pago ------------------------------------------- */
+
+.membership { display: grid; gap: var(--space-6); align-items: start; }
+@media (min-width: 1024px) { .membership { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-8); } }
+
+.membership__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 100% 0%, rgb(232 65 154 / 0.35), transparent 50%), var(--plum-900);
+  color: var(--lilac-50);
+  box-shadow: var(--shadow-lg);
+  --focus-ring: var(--magenta-300);
+}
+.membership__card::after {
+  content: "";
+  position: absolute;
+  right: -3rem;
+  bottom: -3rem;
+  width: 14rem;
+  height: 14rem;
+  background: var(--magenta-500);
+  opacity: 0.08;
+  -webkit-mask: url("../img/cross-mask.svg") center / contain no-repeat;
+  mask: url("../img/cross-mask.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+.membership__head { display: flex; align-items: center; gap: var(--space-4); }
+.membership__badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 18px;
+  background: var(--magenta-500);
+  color: var(--plum-950);
+}
+.membership__badge .icon { width: 1.75rem; height: 1.75rem; stroke-width: 2.2; }
+.membership__eyebrow { font-size: var(--fs-overline); font-weight: 700; letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--magenta-300); }
+.membership__max { font-family: var(--font-display); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem); font-weight: 700; line-height: 1.1; }
+.membership__max strong { color: var(--magenta-500); font-weight: 800; }
+
+.benefits { display: flex; flex-direction: column; list-style: none; }
+.benefits__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid rgb(207 174 217 / 0.16);
+}
+.benefits__row:last-child { border-bottom: 0; }
+.benefits__name { font-weight: 600; font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem); }
+.benefits__name small { font-weight: 500; font-size: 0.8125rem; color: var(--plum-300); }
+.benefits__dots { flex: 1; min-width: 1rem; border-bottom: 2px dotted rgb(207 174 217 / 0.3); translate: 0 -0.25em; }
+.benefits__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--magenta-500);
+  min-width: 3.5ch;
+  text-align: right;
+}
+.benefits__row:first-child .benefits__value { font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem); }
+
+.membership__note {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: rgb(255 239 255 / 0.08);
+  font-size: var(--fs-small);
+  color: var(--plum-200);
+}
+.membership__note .icon { flex-shrink: 0; margin-top: 0.1em; color: var(--magenta-300); }
+
+.membership__side { display: flex; flex-direction: column; gap: var(--space-6); }
+.pay-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+  border-radius: var(--radius-xl);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+.pay-card__title { font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem); }
+.pay-card__text { color: var(--text-on-light-2); }
+.pay-methods { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; }
+.pay-methods li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--plum-50);
+  border: 1px solid var(--plum-100);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+.pay-methods .icon { color: var(--magenta-600); }
+.pay-card__exception {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--plum-200);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--plum-800);
+}
+.pay-card__exception .icon { flex-shrink: 0; margin-top: 0.1em; color: var(--magenta-600); }
+.pay-card--insurance { flex-direction: row; align-items: flex-start; gap: var(--space-4); }
+.pay-card--insurance > div { display: flex; flex-direction: column; gap: var(--space-2); }
+.pay-card__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 14px;
+  background: var(--plum-100);
+  color: var(--magenta-700);
+}
+
 /* ---- Pacientitos -------------------------------------------------------- */
 
 .gallery { columns: 2; column-gap: var(--space-4); }

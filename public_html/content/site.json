@@ -56,9 +56,9 @@
         "image": "/uploads/2026/10/8a013edf27911edf6fb3.webp",
         "image_alt": "Perro blanco y gato abrazados (foto de ejemplo)",
         "video": "",
-        "chips": ["Sin turno · por orden de llegada", "Cirugías y ecografías", "Planes sanitarios"]
+        "chips": ["Sin turno · por orden de llegada", "Cirugías y ecografías", "Socios con descuentos"]
     },
-    "marquee": ["Consultorio", "Planes sanitarios", "Cirugías", "Ecografías", "Análisis clínicos", "Microchip", "Farmacia veterinaria", "Alimentos balanceados", "Pet Shop", "Peluquería canina"],
+    "marquee": ["Consultorio", "Planes sanitarios", "Cirugías", "Ecografías", "Análisis clínicos", "Microchip", "Farmacia veterinaria", "Alimentos balanceados", "Pet Shop", "Peluquería canina", "Sistema de socios"],
     "whatsapp_template": "¡Hola La Guardia! Quiero consultar por: {servicio}. Mascota: ____ · Motivo: ____",
     "service_groups": {
         "clinica": "La clínica",
@@ -164,7 +164,7 @@
             "id": "peluqueria",
             "group": "tienda",
             "name": "Peluquería canina",
-            "description": "Funciona en la clínica. Pedí turno por WhatsApp y te pasamos toda la info.",
+            "description": "Funciona en la clínica, con turno por WhatsApp. Se paga en efectivo o transferencia.",
             "icon": "scissors",
             "cta": "Pedir turno",
             "page": "/peluqueria-canina-santo-tome",
@@ -179,7 +179,7 @@
     "grooming": {
         "title": "Peluquería canina",
         "text": "La peluquería funciona dentro de la clínica, a cargo de Romina Manso. Los turnos se piden por nuestro WhatsApp: escribinos y te pasamos días, horarios y toda la info.",
-        "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso"],
+        "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso", "Efectivo o transferencia"],
         "before_after": [
             {
                 "before": "/uploads/2026/10/4c681f3d9b81910b3bcd.webp",
@@ -204,6 +204,27 @@
             {"name": "Antiparasitarios", "image": "/uploads/2026/10/d61b81bfb9e92103715e.webp"},
             {"name": "Accesorios", "image": "/uploads/2026/10/fd983ca1b5f32612ddeb.webp"}
         ]
+    },
+    "membership": {
+        "title": "Hacete socio y ahorrá todo el año.",
+        "text": "Nuestro propio sistema de socios: con una cuota mensual accesible tenés descuentos en la clínica, la farmacia y el pet shop.",
+        "note": "Los beneficios empiezan a correr a partir del segundo mes de abono.",
+        "cta": "Quiero ser socio",
+        "benefits": [
+            {"name": "Consultas", "detail": "Medicación aparte", "discount": 50},
+            {"name": "Cirugías de tejidos blandos", "detail": "", "discount": 20},
+            {"name": "Vacunas", "detail": "", "discount": 20},
+            {"name": "Farmacia veterinaria", "detail": "", "discount": 15},
+            {"name": "Análisis clínicos", "detail": "", "discount": 15},
+            {"name": "Pipetas", "detail": "", "discount": 10},
+            {"name": "Alimentos balanceados", "detail": "", "discount": 5}
+        ]
+    },
+    "payments": {
+        "methods": ["Efectivo", "Transferencia", "QR", "Tarjeta de débito", "Tarjeta de crédito"],
+        "note": "Para todo lo que lleves de la clínica: consultas, farmacia, pet shop y balanceados.",
+        "exception": "Peluquería canina: solo efectivo o transferencia.",
+        "insurance": "Trabajamos con obras sociales. Consultanos si la tuya está incluida."
     },
     "patients": [
         {"image": "/uploads/2026/10/3fa94c00776a063cac65.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
@@ -274,7 +295,10 @@
         {"q": "¿Qué cirugías hacen?", "a": "Cirugías de tejidos blandos, oftálmicas y odontológicas, y limpiezas dentales. Consultanos también por el servicio de anestesia inhalatoria."},
         {"q": "¿Hacen envíos?", "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra. Escribinos por WhatsApp y lo coordinamos."},
         {"q": "¿Qué marcas de balanceado tienen?", "a": "Trabajamos con las principales marcas: Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."},
-        {"q": "¿Hacen certificados para viajar?", "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."}
+        {"q": "¿Hacen certificados para viajar?", "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."},
+        {"q": "¿Qué medios de pago aceptan?", "a": "Efectivo, transferencia, QR y tarjetas de débito y crédito, para todo lo que lleves de la clínica. La peluquería canina se paga solo en efectivo o por transferencia."},
+        {"q": "¿Trabajan con obras sociales?", "a": "Sí, trabajamos con obras sociales. Consultanos por WhatsApp si la tuya está incluida."},
+        {"q": "¿Cómo funciona el sistema de socios?", "a": "Pagás una cuota mensual accesible y tenés descuentos: 50% en consultas (medicación aparte), 20% en cirugías de tejidos blandos y vacunas, 15% en farmacia y análisis clínicos, 10% en pipetas y 5% en balanceados. Los beneficios empiezan a partir del segundo mes de abono."}
     ],
     "seo": {
         "home": {
@@ -430,7 +454,8 @@
                 {"q": "¿Qué marcas de balanceado tienen?", "a": "Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."},
                 {"q": "¿Hacen envíos?", "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra."},
                 {"q": "¿Venden online?", "a": "No. Consultá el stock por WhatsApp y retiralo en la clínica o pedí el envío."},
-                {"q": "¿Me ayudan a elegir el alimento?", "a": "Sí. Contanos la edad, el tamaño y si tiene algún problema de salud, y te orientamos."}
+                {"q": "¿Me ayudan a elegir el alimento?", "a": "Sí. Contanos la edad, el tamaño y si tiene algún problema de salud, y te orientamos."},
+                {"q": "¿Puedo pagar con tarjeta?", "a": "Sí: efectivo, transferencia, QR y tarjetas de débito y crédito. Y si sos socio, tenés 15% de descuento en farmacia, 10% en pipetas y 5% en balanceados."}
             ]
         },
         "peluqueria-canina-santo-tome": {
@@ -442,7 +467,7 @@
             "lead": "La peluquería canina funciona dentro de la clínica, a cargo de Romina Manso. Los turnos se piden por nuestro WhatsApp.",
             "cta": "Pedir turno de peluquería",
             "wa_service": "un turno de peluquería canina",
-            "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso"],
+            "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso", "Efectivo o transferencia"],
             "sections": [
                 {
                     "title": "Cómo pedir turno",
@@ -470,6 +495,7 @@
                 {"q": "¿Necesito turno para la peluquería?", "a": "Sí. Pedilo por nuestro WhatsApp y te pasamos días y horarios."},
                 {"q": "¿Quién hace la peluquería?", "a": "Romina Manso, que está a cargo de la peluquería canina que funciona en la clínica."},
                 {"q": "¿Cuánto cuesta?", "a": "Depende del tamaño y del tipo de pelo de tu perro. Escribinos por WhatsApp con esos datos y te pasamos el precio."},
+                {"q": "¿Cómo se paga la peluquería?", "a": "Solo en efectivo o por transferencia."},
                 {"q": "¿Puedo aprovechar para hacerle una consulta?", "a": "Sí. El consultorio está en el mismo lugar y atiende sin turno, por orden de llegada, en el horario de atención."}
             ]
         }

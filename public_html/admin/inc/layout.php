@@ -8,6 +8,7 @@ const ADMIN_SECTIONS = [
     'horarios' => ['Horarios', 'Días, turnos y feriados'],
     'contacto' => ['Contacto', 'WhatsApp, teléfono, dirección, redes'],
     'servicios' => ['Servicios', 'Textos, orden y cuáles se muestran'],
+    'socios' => ['Socios y pagos', 'Descuentos, medios de pago y obras sociales'],
     'urgencias' => ['Clínicas de guardia', 'Teléfonos para urgencias'],
     'pacientitos' => ['Pacientitos', 'Galería de fotos'],
     'equipo' => ['Equipo', 'Fotos y textos de cada persona'],

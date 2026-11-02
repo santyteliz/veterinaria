@@ -12,6 +12,7 @@ $nav = [
     '#servicios' => 'Servicios',
     '#peluqueria' => 'Peluquería',
     '#pet-shop' => 'Pet Shop',
+    '#socios' => 'Socios',
     '#nosotros' => 'Nosotros',
     '#contacto' => 'Contacto',
 ];

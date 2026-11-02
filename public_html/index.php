@@ -20,6 +20,7 @@ foreach ([
     'steps',
     'grooming',
     'petshop',
+    'membership',
     'patients',
     'team',
     'reviews',
