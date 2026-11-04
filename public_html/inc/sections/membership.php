@@ -50,9 +50,13 @@ function payment_icon(string $method): string
             <?php endforeach; ?>
           </ul>
 
-          <?php if (!empty($m['note'])): ?>
-            <p class="membership__note"><?= icon('clock') ?><span><?= t($m['note']) ?></span></p>
-          <?php endif; ?>
+          <ul class="membership__notes" role="list">
+            <?php foreach (['note' => 'clock', 'combine_note' => 'shield', 'price_note' => 'whatsapp'] as $key => $ic): ?>
+              <?php if (!empty($m[$key])): ?>
+                <li><?= icon($ic) ?><span><?= t($m[$key]) ?></span></li>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </ul>
           <a class="btn btn--primary btn--lg btn--block" href="<?= e(wa_url('¡Hola La Guardia! Quiero información para hacerme socio: cuánto es la cuota y cómo me anoto.')) ?>" data-track="whatsapp" data-track-label="socios">
             <?= icon('whatsapp') ?> <?= e($m['cta'] ?? 'Quiero ser socio') ?>
           </a>
@@ -81,7 +85,12 @@ function payment_icon(string $method): string
             <div>
               <h3 class="pay-card__title">Obras sociales</h3>
               <p class="pay-card__text"><?= t($pay['insurance']) ?></p>
-              <a class="link-arrow" href="<?= e(wa_url('¡Hola La Guardia! Quiero consultar si trabajan con mi obra social: ____')) ?>" data-track="whatsapp" data-track-label="obra-social">Consultar mi obra social <?= icon('arrow') ?></a>
+              <?php if (!empty($pay['insurance_list'])): ?>
+                <ul class="insurance-list" role="list">
+                  <?php foreach ((array) $pay['insurance_list'] as $name): ?><li><?= e($name) ?></li><?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
+              <a class="link-arrow" href="<?= e(wa_url('¡Hola La Guardia! Quiero consultar por la cobertura de mi obra social: ____')) ?>" data-track="whatsapp" data-track-label="obra-social">Consultar cobertura <?= icon('arrow') ?></a>
             </div>
           </div>
         <?php endif; ?>

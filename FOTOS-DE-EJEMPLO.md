@@ -25,10 +25,9 @@ personas con sus nombres.
 | Pacientitos 9 | https://unsplash.com/photos/LGG5P7KCziU |
 | Peluquería · antes / después 1 | `photo-1779899833023-d2f608715ffd` / `photo-1772437883387-8076cf660c65` |
 | Peluquería · antes / después 2 | `photo-1581887936036-3f4f7f0b6679` / `photo-1588943211346-0908a1fb0b01` |
-| Pet shop · balanceados | `photo-1676193866128-03a926df76ef` |
-| Pet shop · antiparasitarios | https://unsplash.com/photos/ouo1hbizWwo |
-| Pet shop · farmacia | `photo-1725409796872-8b41e8eca929` |
-| Pet shop · accesorios | `photo-1652757558895-0c021232ecb4` |
+
+**Ya son reales (las mandó la clínica el 04/11/2026):** las 5 fotos del pet shop, las 4 de la
+página del pet shop y la del interior de la clínica en "Cómo atendemos".
 
 Los códigos `photo-…` se abren como `https://images.unsplash.com/<código>`.
 

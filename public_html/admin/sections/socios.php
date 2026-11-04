@@ -31,6 +31,8 @@ function section_render(array $data): void
       <?= field_text('title', $m['title'] ?? '', 'Título', ['maxlength' => 70]) ?>
       <?= field_textarea('text', $m['text'] ?? '', 'Texto', ['maxlength' => 200, 'rows' => 3]) ?>
       <?= field_text('note', $m['note'] ?? '', 'Aclaración', ['maxlength' => 120, 'hint' => 'Ej.: “Los beneficios empiezan a correr a partir del segundo mes de abono”.']) ?>
+      <?= field_text('combine_note', $m['combine_note'] ?? '', 'Obra social (opcional)', ['maxlength' => 120, 'hint' => 'Ej.: “Los descuentos de socio se pueden combinar con tu obra social”.']) ?>
+      <?= field_text('price_note', $m['price_note'] ?? '', 'Sobre la cuota (opcional)', ['maxlength' => 160, 'hint' => 'Ej.: “El valor depende de cuántas mascotas sumes: consultalo por WhatsApp”.']) ?>
     </div>
 
     <h2 class="panel__title">Descuentos</h2>
@@ -47,7 +49,8 @@ function section_render(array $data): void
       <?= field_text('methods', implode(', ', (array) ($p['methods'] ?? [])), 'Medios de pago', ['maxlength' => 200, 'hint' => 'Separados por coma. Ej.: Efectivo, Transferencia, QR, Tarjeta de débito, Tarjeta de crédito.']) ?>
       <?= field_text('pay_note', $p['note'] ?? '', 'Para qué valen', ['maxlength' => 140]) ?>
       <?= field_text('exception', $p['exception'] ?? '', 'Excepción (opcional)', ['maxlength' => 120, 'hint' => 'Ej.: “Peluquería canina: solo efectivo o transferencia”.']) ?>
-      <?= field_text('insurance', $p['insurance'] ?? '', 'Obras sociales', ['maxlength' => 140, 'hint' => 'Dejalo vacío para no mostrar el recuadro de obras sociales.']) ?>
+      <?= field_text('insurance', $p['insurance'] ?? '', 'Obras sociales: texto', ['maxlength' => 140, 'hint' => 'Dejalo vacío para no mostrar el recuadro de obras sociales.']) ?>
+      <?= field_text('insurance_list', implode(', ', (array) ($p['insurance_list'] ?? [])), 'Obras sociales: nombres', ['maxlength' => 200, 'hint' => 'Separadas por coma. Ej.: Vet en Línea, Omega Salud, Avsim.']) ?>
     </div>
     <?php
     echo form_close();
@@ -70,6 +73,8 @@ function section_save(array $data): array
         'title' => clean_line(posted('title'), 70) ?: 'Hacete socio y ahorrá todo el año.',
         'text' => clean_line(posted('text'), 200),
         'note' => clean_line(posted('note'), 120),
+        'combine_note' => clean_line(posted('combine_note'), 120),
+        'price_note' => clean_line(posted('price_note'), 160),
         'benefits' => $benefits,
     ]);
     $data['payments'] = [
@@ -77,6 +82,7 @@ function section_save(array $data): array
         'note' => clean_line(posted('pay_note'), 140),
         'exception' => clean_line(posted('exception'), 120),
         'insurance' => clean_line(posted('insurance'), 140),
+        'insurance_list' => array_values(array_filter(array_map(fn ($n) => clean_line($n, 40), explode(',', (string) posted('insurance_list'))))),
     ];
     return [$data, '¡Listo! Socios y formas de pago actualizados.'];
 }

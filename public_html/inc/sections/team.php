@@ -20,7 +20,7 @@ function team_initials(string $name): string
     <div class="section-head">
       <p class="overline">Nosotros</p>
       <h2 id="nosotros-title">Una clínica de barrio, con nombre y apellido.</h2>
-      <p class="lead">En <?= e(c('contact.city')) ?> te atiende siempre la misma gente, que conoce a tu pacientito y lo sigue de cerca.</p>
+      <p class="lead">En <?= e(c('contact.city')) ?> te atiende siempre la misma gente, que conoce a tu mascota y la sigue de cerca.</p>
     </div>
 
     <ul class="team" role="list">

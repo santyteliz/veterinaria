@@ -12,7 +12,7 @@ foreach ($services as $service) {
   <div class="container">
     <div class="section-head">
       <p class="overline">Servicios</p>
-      <h2 id="servicios-title">Todo para tu pacientito, en un solo lugar.</h2>
+      <h2 id="servicios-title"><?= e(c('services_title', 'Lo que tu mascota necesita, en un solo lugar.')) ?></h2>
       <p class="lead">Tocá “Consultar” y te abrimos WhatsApp con el mensaje listo.</p>
     </div>
 

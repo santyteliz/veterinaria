@@ -12,7 +12,7 @@ $credits = (string) c('credits.url');
     <div class="site-footer__brand">
       <img class="site-footer__logo" src="/assets/img/logo-completo-claro-480.webp" alt="Clínica Veterinaria La Guardia" width="200" height="177" loading="lazy" decoding="async">
       <p>Consultorio veterinario, cirugías, ecografías, farmacia, pet shop y balanceados en <?= e(c('contact.city')) ?>, <?= e(c('contact.region')) ?>.</p>
-      <p class="site-footer__warn"><?= icon('alert') ?> No realizamos urgencias. <a href="/#urgencias">Ver clínicas de guardia</a></p>
+      <p class="site-footer__warn"><?= icon('alert') ?> No realizamos urgencias. <a href="/#urgencias">Qué hacer en una urgencia</a></p>
     </div>
 
     <div>

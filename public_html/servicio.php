@@ -67,13 +67,30 @@ require __DIR__ . '/inc/layout-start.php';
 </section>
 
 <section class="section section--light" aria-label="Información">
+  <?php if (!empty($p['photos'])): ?>
+    <div class="container">
+      <ul class="page-photos" role="list">
+        <?php foreach ((array) $p['photos'] as $ph): ?>
+          <li><?= img_or_placeholder((string) $ph['image'], (string) ($ph['alt'] ?? ''), '', 'page-photos__img', true, '(min-width: 1024px) 25vw, 50vw') ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
   <div class="container page-body">
     <article class="prose">
-      <?php foreach ((array) ($p['sections'] ?? []) as $sec): ?>
-        <h2><?= e($sec['title']) ?></h2>
+      <?php foreach ((array) ($p['sections'] ?? []) as $sec):
+          // Ancla por título (ej. /pet-shop-santo-tome#alimentos-balanceados).
+          $anchor = trim((string) preg_replace('/[^a-z0-9]+/', '-', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', (string) $sec['title']) ?: '')), '-');
+      ?>
+        <h2 id="<?= e($anchor) ?>"><?= e($sec['title']) ?></h2>
         <?php foreach ((array) ($sec['paragraphs'] ?? []) as $para): ?>
           <p><?= t($para) ?></p>
         <?php endforeach; ?>
+        <?php if (!empty($sec['brands']) && c('petshop.brands')): ?>
+          <ul class="brands__list prose__brands" role="list">
+            <?php foreach ((array) c('petshop.brands') as $brand): ?><li><?= e($brand) ?></li><?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
         <?php if (!empty($sec['list'])): ?>
           <ul class="prose__list">
             <?php foreach ((array) $sec['list'] as $item): ?>

@@ -29,7 +29,7 @@
     },
     "announcement": {
         "enabled": true,
-        "text": "Versión de prueba: las fotos son de ejemplo y se reemplazan por las de la clínica.",
+        "text": "Versión de prueba: algunas fotos son de ejemplo y se reemplazan por las de la clínica.",
         "style": "plum",
         "expires": ""
     },
@@ -37,11 +37,56 @@
         "note": "Por orden de llegada",
         "pending": "Sábados, domingos y feriados: cerrado.",
         "week": {
-            "1": [["09:00", "12:00"], ["17:00", "20:00"]],
-            "2": [["09:00", "12:00"], ["17:00", "20:00"]],
-            "3": [["09:00", "12:00"], ["17:00", "20:00"]],
-            "4": [["09:00", "12:00"], ["17:00", "20:00"]],
-            "5": [["09:00", "12:00"], ["17:00", "20:00"]],
+            "1": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "2": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "3": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "4": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
+            "5": [
+                [
+                    "09:00",
+                    "12:00"
+                ],
+                [
+                    "17:00",
+                    "20:00"
+                ]
+            ],
             "6": [],
             "7": []
         },
@@ -56,9 +101,25 @@
         "image": "/uploads/2026/10/8a013edf27911edf6fb3.webp",
         "image_alt": "Perro blanco y gato abrazados (foto de ejemplo)",
         "video": "",
-        "chips": ["Sin turno · por orden de llegada", "Cirugías y ecografías", "Socios con descuentos"]
+        "chips": [
+            "Sin turno · por orden de llegada",
+            "Cirugías y ecografías",
+            "Socios con descuentos"
+        ]
     },
-    "marquee": ["Consultorio", "Planes sanitarios", "Cirugías", "Ecografías", "Análisis clínicos", "Microchip", "Farmacia veterinaria", "Alimentos balanceados", "Pet Shop", "Peluquería canina", "Sistema de socios"],
+    "marquee": [
+        "Consultorio",
+        "Planes sanitarios",
+        "Cirugías",
+        "Ecografías",
+        "Análisis clínicos",
+        "Microchip",
+        "Farmacia veterinaria",
+        "Alimentos balanceados",
+        "Pet Shop",
+        "Peluquería canina",
+        "Sistema de socios"
+    ],
     "whatsapp_template": "¡Hola La Guardia! Quiero consultar por: {servicio}. Mascota: ____ · Motivo: ____",
     "service_groups": {
         "clinica": "La clínica",
@@ -69,7 +130,7 @@
             "id": "consultorio",
             "group": "clinica",
             "name": "Consultorio veterinario",
-            "description": "Consultas para perros y gatos, sin turno y por orden de llegada.",
+            "description": "Atendemos perros y gatos, sin turno y por orden de llegada.",
             "icon": "stethoscope",
             "visible": true
         },
@@ -137,7 +198,7 @@
             "id": "farmacia",
             "group": "tienda",
             "name": "Farmacia veterinaria",
-            "description": "Medicamentos y antiparasitarios. Consultá también por envíos.",
+            "description": "Medicamentos, antiparasitarios y productos para el cuidado de tu mascota. Consultá por envíos.",
             "icon": "pill",
             "page": "/pet-shop-santo-tome",
             "visible": true
@@ -146,16 +207,16 @@
             "id": "balanceados",
             "group": "tienda",
             "name": "Alimentos balanceados",
-            "description": "Royal Canin, Performance, Old Prince, Livra, Sieger y más marcas.",
+            "description": "Variedad de marcas y opciones nutricionales para cada etapa de tu mascota.",
             "icon": "bowl",
-            "page": "/pet-shop-santo-tome",
+            "page": "/pet-shop-santo-tome#alimentos-balanceados",
             "visible": true
         },
         {
             "id": "petshop",
             "group": "tienda",
             "name": "Pet Shop",
-            "description": "Lo que tu mascota necesita para el día a día. Consultanos por stock.",
+            "description": "Lo que tu mascota necesita para el día a día. Consultá el stock disponible.",
             "icon": "bag",
             "page": "/pet-shop-santo-tome",
             "visible": true
@@ -164,7 +225,7 @@
             "id": "peluqueria",
             "group": "tienda",
             "name": "Peluquería canina",
-            "description": "Funciona en la clínica, con turno por WhatsApp. Se paga en efectivo o transferencia.",
+            "description": "Estética canina para mantener a tu mascota limpia, cómoda y saludable. Con turno previo por WhatsApp. Pago en efectivo o transferencia.",
             "icon": "scissors",
             "cta": "Pedir turno",
             "page": "/peluqueria-canina-santo-tome",
@@ -172,14 +233,28 @@
         }
     ],
     "steps": [
-        {"title": "Venís sin turno", "text": "Atendemos por orden de llegada, de lunes a viernes, a la mañana y a la tarde."},
-        {"title": "Te atendemos", "text": "Revisamos a tu pacientito con tiempo y te explicamos todo."},
-        {"title": "Seguimiento por WhatsApp", "text": "Te escribimos para saber cómo sigue y te avisamos cuando toca la próxima vacuna.", "highlight": true}
+        {
+            "title": "Atención sin cita previa",
+            "text": "Atendemos por orden de llegada, de lunes a viernes, en ambos turnos."
+        },
+        {
+            "title": "Atención personalizada",
+            "text": "Evaluamos a cada mascota, brindamos un diagnóstico y explicamos las indicaciones correspondientes."
+        },
+        {
+            "title": "Seguimiento por WhatsApp",
+            "text": "Realizamos el seguimiento de cada paciente y te recordamos las próximas vacunas y controles.",
+            "highlight": true
+        }
     ],
     "grooming": {
         "title": "Peluquería canina",
-        "text": "La peluquería funciona dentro de la clínica, a cargo de Romina Manso. Los turnos se piden por nuestro WhatsApp: escribinos y te pasamos días, horarios y toda la info.",
-        "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso", "Efectivo o transferencia"],
+        "text": "Estética canina para mantener a tu mascota limpia, cómoda y saludable, dentro de la clínica y a cargo de Romina Manso. Atención con turno previo, coordinado por nuestro WhatsApp.",
+        "facts": [
+            "Turnos por WhatsApp",
+            "A cargo de Romina Manso",
+            "Efectivo o transferencia"
+        ],
         "before_after": [
             {
                 "before": "/uploads/2026/10/4c681f3d9b81910b3bcd.webp",
@@ -196,13 +271,38 @@
     "petshop": {
         "title": "Pet Shop, farmacia y balanceados",
         "text": "No vendemos online: escribinos y te decimos si lo tenemos.",
-        "brands": ["Royal Canin", "Performance", "Old Prince", "Livra", "Sieger", "Agility", "Jaspe", "MV Holliday"],
+        "brands": [
+            "Royal Canin",
+            "Performance",
+            "Old Prince",
+            "Livra",
+            "Sieger",
+            "Agility",
+            "Jaspe",
+            "MV Holliday"
+        ],
         "shipping": "Hacemos envíos a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra. Consultanos.",
         "items": [
-            {"name": "Alimentos balanceados", "image": "/uploads/2026/10/d04aab0d41be22d79adf.webp"},
-            {"name": "Farmacia veterinaria", "image": "/uploads/2026/10/7df613ac82208d8cad31.webp"},
-            {"name": "Antiparasitarios", "image": "/uploads/2026/10/d61b81bfb9e92103715e.webp"},
-            {"name": "Accesorios", "image": "/uploads/2026/10/fd983ca1b5f32612ddeb.webp"}
+            {
+                "name": "Alimentos balanceados",
+                "image": "/uploads/2026/11/af6d0ad80ea0ea1af866.webp"
+            },
+            {
+                "name": "Farmacia veterinaria",
+                "image": "/uploads/2026/11/ad6f93fb89b83ddf3a28.webp"
+            },
+            {
+                "name": "Antiparasitarios",
+                "image": "/uploads/2026/11/f5205f5779dd30e8fe5f.webp"
+            },
+            {
+                "name": "Productos de cuidado",
+                "image": "/uploads/2026/11/a2517a1f817cb8e4bb86.webp"
+            },
+            {
+                "name": "Accesorios",
+                "image": "/uploads/2026/11/b3a311ea84bffb0f9bc8.webp"
+            }
         ]
     },
     "membership": {
@@ -211,38 +311,115 @@
         "note": "Los beneficios empiezan a correr a partir del segundo mes de abono.",
         "cta": "Quiero ser socio",
         "benefits": [
-            {"name": "Consultas", "detail": "Medicación aparte", "discount": 50},
-            {"name": "Cirugías de tejidos blandos", "detail": "", "discount": 20},
-            {"name": "Vacunas", "detail": "", "discount": 20},
-            {"name": "Farmacia veterinaria", "detail": "", "discount": 15},
-            {"name": "Análisis clínicos", "detail": "", "discount": 15},
-            {"name": "Pipetas", "detail": "", "discount": 10},
-            {"name": "Alimentos balanceados", "detail": "", "discount": 5}
-        ]
+            {
+                "name": "Consultas",
+                "detail": "Medicación aparte",
+                "discount": 50
+            },
+            {
+                "name": "Cirugías de tejidos blandos",
+                "detail": "",
+                "discount": 20
+            },
+            {
+                "name": "Vacunas",
+                "detail": "",
+                "discount": 20
+            },
+            {
+                "name": "Farmacia veterinaria",
+                "detail": "",
+                "discount": 15
+            },
+            {
+                "name": "Análisis clínicos",
+                "detail": "",
+                "discount": 15
+            },
+            {
+                "name": "Pipetas",
+                "detail": "",
+                "discount": 10
+            },
+            {
+                "name": "Alimentos balanceados",
+                "detail": "",
+                "discount": 5
+            }
+        ],
+        "price_note": "El valor de la cuota depende de cuántas mascotas sumes (hay planes de hasta 5) y se actualiza: consultalo por WhatsApp.",
+        "combine_note": "Los descuentos de socio se pueden combinar con tu obra social."
     },
     "payments": {
-        "methods": ["Efectivo", "Transferencia", "QR", "Tarjeta de débito", "Tarjeta de crédito"],
+        "methods": [
+            "Efectivo",
+            "Transferencia",
+            "QR",
+            "Tarjeta de débito",
+            "Tarjeta de crédito"
+        ],
         "note": "Para todo lo que lleves de la clínica: consultas, farmacia, pet shop y balanceados.",
         "exception": "Peluquería canina: solo efectivo o transferencia.",
-        "insurance": "Trabajamos con obras sociales. Consultanos si la tuya está incluida."
+        "insurance": "Trabajamos con estas obras sociales. Consultanos por la cobertura de la tuya.",
+        "insurance_list": [
+            "Vet en Línea",
+            "Omega Salud",
+            "Avsim"
+        ]
     },
     "patients": [
-        {"image": "/uploads/2026/10/3fa94c00776a063cac65.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/c0cc8bff9ebe80b569bb.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/112f34518d0a547d2576.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/34f6af36d0d5b64cce5e.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/f9f87dd9030a24a04145.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/f307e9760d7ed8af700b.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/7091144177d0aec1c38c.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/37c598f3181c3e7235ec.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"},
-        {"image": "/uploads/2026/10/55efb38619b1ced55ee8.webp", "name": "", "alt": "Pacientito (foto de ejemplo)"}
+        {
+            "image": "/uploads/2026/10/3fa94c00776a063cac65.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/c0cc8bff9ebe80b569bb.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/112f34518d0a547d2576.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/34f6af36d0d5b64cce5e.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/f9f87dd9030a24a04145.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/f307e9760d7ed8af700b.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/7091144177d0aec1c38c.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/37c598f3181c3e7235ec.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        },
+        {
+            "image": "/uploads/2026/10/55efb38619b1ced55ee8.webp",
+            "name": "",
+            "alt": "Pacientito (foto de ejemplo)"
+        }
     ],
     "team": [
         {
             "name": "MV Ángel Emilio Nasso",
             "role": "Médico veterinario a cargo",
             "detail": "Mat. Prof. 2312",
-            "bio": "Está al frente de la clínica: de cada consulta, cada cirugía y el seguimiento de cada pacientito.",
+            "bio": "Está al frente de la clínica: de cada consulta, cada cirugía y el seguimiento de cada paciente.",
             "photo": ""
         },
         {
@@ -276,29 +453,54 @@
     },
     "emergency": {
         "title": "¿Es una urgencia?",
-        "text": "No realizamos urgencias. Comunicate con estas clínicas de guardia o con el veterinario a domicilio:",
-        "clinics": [
-            {"name": "MV Cristian López · a domicilio", "phone": "+543426131922", "phone_display": "342 613-1922"},
-            {"name": "", "phone": "+543425302300", "phone_display": "342 530-2300"},
-            {"name": "", "phone": "+543425348854", "phone_display": "342 534-8854"},
-            {"name": "", "phone": "+543426315616", "phone_display": "342 631-5616"},
-            {"name": "", "phone": "+543425502341", "phone_display": "342 550-2341"},
-            {"name": "Azul Veterinaria 24 h", "phone": "+543424296152", "phone_display": "342 429-6152"},
-            {"name": "", "phone": "+543425829237", "phone_display": "342 582-9237"},
-            {"name": "", "phone": "+543425781810", "phone_display": "342 578-1810"}
-        ]
+        "text": "No realizamos urgencias. Si tu mascota necesita atención urgente, escribinos por WhatsApp y te pasamos los contactos de guardia.",
+        "clinics": []
     },
     "faq": [
-        {"q": "¿Necesito turno?", "a": "Para el consultorio, no: atendemos por orden de llegada, de lunes a viernes de 9 a 12 h y de 17 a 20 h. La peluquería canina sí trabaja con turno, que se pide por nuestro WhatsApp."},
-        {"q": "¿Atienden urgencias?", "a": "No realizamos urgencias. En esta misma página tenés la lista de clínicas de guardia y el contacto del veterinario a domicilio."},
-        {"q": "¿Abren los fines de semana?", "a": "No. Sábados, domingos y feriados la clínica está cerrada."},
-        {"q": "¿Qué cirugías hacen?", "a": "Cirugías de tejidos blandos, oftálmicas y odontológicas, y limpiezas dentales. Consultanos también por el servicio de anestesia inhalatoria."},
-        {"q": "¿Hacen envíos?", "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra. Escribinos por WhatsApp y lo coordinamos."},
-        {"q": "¿Qué marcas de balanceado tienen?", "a": "Trabajamos con las principales marcas: Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."},
-        {"q": "¿Hacen certificados para viajar?", "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."},
-        {"q": "¿Qué medios de pago aceptan?", "a": "Efectivo, transferencia, QR y tarjetas de débito y crédito, para todo lo que lleves de la clínica. La peluquería canina se paga solo en efectivo o por transferencia."},
-        {"q": "¿Trabajan con obras sociales?", "a": "Sí, trabajamos con obras sociales. Consultanos por WhatsApp si la tuya está incluida."},
-        {"q": "¿Cómo funciona el sistema de socios?", "a": "Pagás una cuota mensual accesible y tenés descuentos: 50% en consultas (medicación aparte), 20% en cirugías de tejidos blandos y vacunas, 15% en farmacia y análisis clínicos, 10% en pipetas y 5% en balanceados. Los beneficios empiezan a partir del segundo mes de abono."}
+        {
+            "q": "¿Necesito turno?",
+            "a": "Para el consultorio, no: atendemos por orden de llegada, de lunes a viernes de 9 a 12 h y de 17 a 20 h. La peluquería canina sí trabaja con turno previo, que se coordina por nuestro WhatsApp."
+        },
+        {
+            "q": "¿Qué animales atienden?",
+            "a": "Solo perros y gatos. Traé a tu gato en su caja transportadora o bolso de transporte, y a tu perro con collar y correa."
+        },
+        {
+            "q": "¿Atienden urgencias?",
+            "a": "No realizamos urgencias. Si tu mascota necesita atención urgente, escribinos por WhatsApp y te pasamos los contactos de guardia."
+        },
+        {
+            "q": "¿Abren los fines de semana?",
+            "a": "No. Sábados, domingos y feriados la clínica está cerrada."
+        },
+        {
+            "q": "¿Qué cirugías hacen?",
+            "a": "Cirugías de tejidos blandos, oftálmicas y odontológicas, y limpiezas dentales. Consultanos también por el servicio de anestesia inhalatoria."
+        },
+        {
+            "q": "¿Hacen envíos?",
+            "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra. Escribinos por WhatsApp y lo coordinamos."
+        },
+        {
+            "q": "¿Qué marcas de balanceado tienen?",
+            "a": "Trabajamos con las principales marcas: Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."
+        },
+        {
+            "q": "¿Hacen certificados para viajar?",
+            "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."
+        },
+        {
+            "q": "¿Qué medios de pago aceptan?",
+            "a": "Efectivo, transferencia, QR y tarjetas de débito y crédito, para todo lo que lleves de la clínica. La peluquería canina se paga solo en efectivo o por transferencia."
+        },
+        {
+            "q": "¿Trabajan con obras sociales?",
+            "a": "Sí: Vet en Línea, Omega Salud y Avsim. Consultanos por WhatsApp por la cobertura de la tuya."
+        },
+        {
+            "q": "¿Cómo funciona el sistema de socios?",
+            "a": "Pagás una cuota mensual y tenés descuentos: 50% en consultas (medicación aparte), 20% en cirugías de tejidos blandos y vacunas, 15% en farmacia y análisis clínicos, 10% en pipetas y 5% en balanceados. Los beneficios empiezan a partir del segundo mes de abono y se pueden combinar con tu obra social. El valor depende de cuántas mascotas sumes: consultalo por WhatsApp."
+        }
     ],
     "seo": {
         "home": {
@@ -317,7 +519,10 @@
             "lead": "Cirugías de tejidos blandos, oftálmicas y odontológicas, y limpiezas dentales. Con análisis clínicos y ecografías en la misma clínica.",
             "cta": "Consultar por una cirugía",
             "wa_service": "una cirugía",
-            "facts": ["Consultá por anestesia inhalatoria", "Análisis y ecografías en la clínica"],
+            "facts": [
+                "Consultá por anestesia inhalatoria",
+                "Análisis y ecografías en la clínica"
+            ],
             "sections": [
                 {
                     "title": "Qué cirugías hacemos",
@@ -349,10 +554,22 @@
                 }
             ],
             "faq": [
-                {"q": "¿Qué cirugías hacen?", "a": "Cirugías de tejidos blandos, oftálmicas y odontológicas, además de limpiezas dentales."},
-                {"q": "¿Usan anestesia inhalatoria?", "a": "Consultanos por el servicio de anestesia inhalatoria y te contamos si es lo indicado para tu mascota."},
-                {"q": "¿Hacen limpiezas dentales?", "a": "Sí. Escribinos por WhatsApp o vení a una consulta y te explicamos cómo es."},
-                {"q": "¿Hacen ecografías y análisis?", "a": "Sí. Hacemos análisis clínicos, y las ecografías están a cargo de la MV Tamara Silvetti."}
+                {
+                    "q": "¿Qué cirugías hacen?",
+                    "a": "Cirugías de tejidos blandos, oftálmicas y odontológicas, además de limpiezas dentales."
+                },
+                {
+                    "q": "¿Usan anestesia inhalatoria?",
+                    "a": "Consultanos por el servicio de anestesia inhalatoria y te contamos si es lo indicado para tu mascota."
+                },
+                {
+                    "q": "¿Hacen limpiezas dentales?",
+                    "a": "Sí. Escribinos por WhatsApp o vení a una consulta y te explicamos cómo es."
+                },
+                {
+                    "q": "¿Hacen ecografías y análisis?",
+                    "a": "Sí. Hacemos análisis clínicos, y las ecografías están a cargo de la MV Tamara Silvetti."
+                }
             ]
         },
         "vacunacion-perros-gatos-santo-tome": {
@@ -364,7 +581,10 @@
             "lead": "Planes sanitarios con vacunas y desparasitaciones, sin turno y por orden de llegada. Y te avisamos por WhatsApp cuando toca la próxima, para que no se te pase.",
             "cta": "Consultar por vacunas",
             "wa_service": "vacunación y desparasitación",
-            "facts": ["Sin turno · por orden de llegada", "Recordatorio por WhatsApp"],
+            "facts": [
+                "Sin turno · por orden de llegada",
+                "Recordatorio por WhatsApp"
+            ],
             "sections": [
                 {
                     "title": "Planes sanitarios",
@@ -404,12 +624,30 @@
                 }
             ],
             "faq": [
-                {"q": "¿Necesito turno para vacunar?", "a": "No. Atendemos sin turno, por orden de llegada, de lunes a viernes de 9 a 12 h y de 17 a 20 h."},
-                {"q": "¿Qué incluye un plan sanitario?", "a": "Las vacunas y las desparasitaciones que tu mascota necesita según su edad y su forma de vida."},
-                {"q": "¿Me avisan cuándo toca la próxima vacuna?", "a": "Sí, te avisamos por WhatsApp cuando se acerca la próxima dosis."},
-                {"q": "¿Hacen certificados para viajar?", "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."},
-                {"q": "¿Colocan microchip?", "a": "Sí, hacemos la colocación de microchip para identificar a tu mascota."},
-                {"q": "¿La vacuna antirrábica es obligatoria?", "a": "Sí. En Argentina la vacuna antirrábica es obligatoria para perros y gatos."}
+                {
+                    "q": "¿Necesito turno para vacunar?",
+                    "a": "No. Atendemos sin turno, por orden de llegada, de lunes a viernes de 9 a 12 h y de 17 a 20 h."
+                },
+                {
+                    "q": "¿Qué incluye un plan sanitario?",
+                    "a": "Las vacunas y las desparasitaciones que tu mascota necesita según su edad y su forma de vida."
+                },
+                {
+                    "q": "¿Me avisan cuándo toca la próxima vacuna?",
+                    "a": "Sí, te avisamos por WhatsApp cuando se acerca la próxima dosis."
+                },
+                {
+                    "q": "¿Hacen certificados para viajar?",
+                    "a": "Sí: certificados de movimiento y exportación para viajes al exterior, además de libreta de vacunación y certificados de salud."
+                },
+                {
+                    "q": "¿Colocan microchip?",
+                    "a": "Sí, hacemos la colocación de microchip para identificar a tu mascota."
+                },
+                {
+                    "q": "¿La vacuna antirrábica es obligatoria?",
+                    "a": "Sí. En Argentina la vacuna antirrábica es obligatoria para perros y gatos."
+                }
             ]
         },
         "pet-shop-santo-tome": {
@@ -421,19 +659,23 @@
             "lead": "Balanceados de primeras marcas, farmacia veterinaria y lo que tu mascota necesita para el día a día. Escribinos y te decimos si lo tenemos.",
             "cta": "Consultar stock",
             "wa_service": "stock del pet shop",
-            "facts": ["Envíos a Santo Tomé y alrededores", "Asesoramiento veterinario"],
+            "facts": [
+                "Envíos a Santo Tomé y alrededores",
+                "Asesoramiento veterinario"
+            ],
             "sections": [
                 {
                     "title": "Alimentos balanceados",
                     "paragraphs": [
                         "Trabajamos con las principales marcas del mercado argentino: Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday.",
                         "¿No sabés cuál le conviene? Preguntanos: la edad, el tamaño y la salud de tu mascota cambian lo que necesita, y en la clínica te podemos orientar."
-                    ]
+                    ],
+                    "brands": true
                 },
                 {
                     "title": "Farmacia veterinaria",
                     "paragraphs": [
-                        "Medicamentos veterinarios y antiparasitarios para que no haya más pulgas.",
+                        "Medicamentos veterinarios, antiparasitarios y productos para el cuidado de tu mascota.",
                         "Si un medicamento lo indicó el veterinario, traé la indicación. Y si tenés dudas con la dosis o con cuál elegir, consultanos antes de dárselo."
                     ]
                 },
@@ -451,11 +693,44 @@
                 }
             ],
             "faq": [
-                {"q": "¿Qué marcas de balanceado tienen?", "a": "Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."},
-                {"q": "¿Hacen envíos?", "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra."},
-                {"q": "¿Venden online?", "a": "No. Consultá el stock por WhatsApp y retiralo en la clínica o pedí el envío."},
-                {"q": "¿Me ayudan a elegir el alimento?", "a": "Sí. Contanos la edad, el tamaño y si tiene algún problema de salud, y te orientamos."},
-                {"q": "¿Puedo pagar con tarjeta?", "a": "Sí: efectivo, transferencia, QR y tarjetas de débito y crédito. Y si sos socio, tenés 15% de descuento en farmacia, 10% en pipetas y 5% en balanceados."}
+                {
+                    "q": "¿Qué marcas de balanceado tienen?",
+                    "a": "Royal Canin, Performance, Old Prince, Livra, Sieger, Agility, Jaspe y MV Holliday. Consultanos por stock."
+                },
+                {
+                    "q": "¿Hacen envíos?",
+                    "a": "Sí, a Santo Tomé, Sauce Viejo, Santa Fe y alrededores, con costo extra."
+                },
+                {
+                    "q": "¿Venden online?",
+                    "a": "No. Consultá el stock por WhatsApp y retiralo en la clínica o pedí el envío."
+                },
+                {
+                    "q": "¿Me ayudan a elegir el alimento?",
+                    "a": "Sí. Contanos la edad, el tamaño y si tiene algún problema de salud, y te orientamos."
+                },
+                {
+                    "q": "¿Puedo pagar con tarjeta?",
+                    "a": "Sí: efectivo, transferencia, QR y tarjetas de débito y crédito. Y si sos socio, tenés 15% de descuento en farmacia, 10% en pipetas y 5% en balanceados."
+                }
+            ],
+            "photos": [
+                {
+                    "image": "/uploads/2026/11/af6d0ad80ea0ea1af866.webp",
+                    "alt": "Estante de alimentos balanceados Royal Canin en la clínica"
+                },
+                {
+                    "image": "/uploads/2026/11/e8447b37663013bffb77.webp",
+                    "alt": "Alimentos balanceados Old Prince en la clínica"
+                },
+                {
+                    "image": "/uploads/2026/11/ad6f93fb89b83ddf3a28.webp",
+                    "alt": "Farmacia veterinaria de la clínica"
+                },
+                {
+                    "image": "/uploads/2026/11/b3a311ea84bffb0f9bc8.webp",
+                    "alt": "Correas, collares y accesorios del pet shop"
+                }
             ]
         },
         "peluqueria-canina-santo-tome": {
@@ -467,7 +742,11 @@
             "lead": "La peluquería canina funciona dentro de la clínica, a cargo de Romina Manso. Los turnos se piden por nuestro WhatsApp.",
             "cta": "Pedir turno de peluquería",
             "wa_service": "un turno de peluquería canina",
-            "facts": ["Turnos por WhatsApp", "A cargo de Romina Manso", "Efectivo o transferencia"],
+            "facts": [
+                "Turnos por WhatsApp",
+                "A cargo de Romina Manso",
+                "Efectivo o transferencia"
+            ],
             "sections": [
                 {
                     "title": "Cómo pedir turno",
@@ -492,16 +771,50 @@
                 }
             ],
             "faq": [
-                {"q": "¿Necesito turno para la peluquería?", "a": "Sí. Pedilo por nuestro WhatsApp y te pasamos días y horarios."},
-                {"q": "¿Quién hace la peluquería?", "a": "Romina Manso, que está a cargo de la peluquería canina que funciona en la clínica."},
-                {"q": "¿Cuánto cuesta?", "a": "Depende del tamaño y del tipo de pelo de tu perro. Escribinos por WhatsApp con esos datos y te pasamos el precio."},
-                {"q": "¿Cómo se paga la peluquería?", "a": "Solo en efectivo o por transferencia."},
-                {"q": "¿Puedo aprovechar para hacerle una consulta?", "a": "Sí. El consultorio está en el mismo lugar y atiende sin turno, por orden de llegada, en el horario de atención."}
+                {
+                    "q": "¿Necesito turno para la peluquería?",
+                    "a": "Sí. Pedilo por nuestro WhatsApp y te pasamos días y horarios."
+                },
+                {
+                    "q": "¿Quién hace la peluquería?",
+                    "a": "Romina Manso, que está a cargo de la peluquería canina que funciona en la clínica."
+                },
+                {
+                    "q": "¿Cuánto cuesta?",
+                    "a": "Depende del tamaño y del tipo de pelo de tu perro. Escribinos por WhatsApp con esos datos y te pasamos el precio."
+                },
+                {
+                    "q": "¿Cómo se paga la peluquería?",
+                    "a": "Solo en efectivo o por transferencia."
+                },
+                {
+                    "q": "¿Puedo aprovechar para hacerle una consulta?",
+                    "a": "Sí. El consultorio está en el mismo lugar y atiende sin turno, por orden de llegada, en el horario de atención."
+                }
             ]
         }
     },
     "credits": {
         "label": "Hecho por Web Wisse",
         "url": ""
+    },
+    "steps_title": "Un cuidado integral, de principio a fin.",
+    "services_title": "Lo que tu mascota necesita para su salud y bienestar, en un solo lugar.",
+    "visit_tip": {
+        "overline": "Antes de venir",
+        "title": "Atendemos solo perros y gatos.",
+        "text": "Para que la visita a la clínica sea segura y tranquila para todos, recordá traer a tu gato en su caja transportadora o bolso de transporte, y a tu perro con collar y correa.",
+        "items": [
+            {
+                "label": "Gatos",
+                "text": "En su caja transportadora o bolso de transporte."
+            },
+            {
+                "label": "Perros",
+                "text": "Con collar y correa."
+            }
+        ],
+        "image": "/uploads/2026/11/fae65a611554e4b515fc.webp",
+        "image_alt": "Sala de espera y mostrador de la Clínica Veterinaria La Guardia"
     }
 }
