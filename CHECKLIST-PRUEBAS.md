@@ -146,7 +146,7 @@ LCP ~2,0 s · CLS 0 en todas. Objetivo del brief: Performance ≥ 90, Accesibili
 
 ## 9. Después de publicar
 
-- [ ] Google Search Console: agregar el dominio, enviar `https://veterinarialaguardia.com/sitemap.xml`.
+- [x] Google Search Console (15/11/2026): dominio verificado por DNS (TXT en Hostinger, no borrarlo), enviado `https://veterinarialaguardia.com/sitemap.xml`.
 - [ ] Ficha de Google Business: poner el link de la web y revisar que horarios y dirección coincidan con el panel.
 - [ ] Inspeccionar en Search Console la home y las 4 páginas de servicio y pedir indexación.
 - [ ] Volver a correr `node tools/smoke-test.mjs https://veterinarialaguardia.com` y quedarse con **0 fallas**.
