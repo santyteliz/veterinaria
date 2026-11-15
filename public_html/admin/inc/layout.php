@@ -11,6 +11,7 @@ const ADMIN_SECTIONS = [
     'socios' => ['Socios y pagos', 'Descuentos, medios de pago y obras sociales'],
     'urgencias' => ['Clínicas de guardia', 'Teléfonos para urgencias'],
     'pacientitos' => ['Pacientitos', 'Galería de fotos'],
+    'peluqueria' => ['Peluquería', 'Fotos de antes y después'],
     'equipo' => ['Equipo', 'Fotos y textos de cada persona'],
     'resenas' => ['Reseñas', 'Reseñas reales de Google'],
     'versiones' => ['Versiones', 'Volver a un guardado anterior'],

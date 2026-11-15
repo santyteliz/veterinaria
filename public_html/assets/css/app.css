@@ -826,6 +826,11 @@ html.lenis { scroll-behavior: auto; }
 /* Varios pares: lado a lado y en vertical (así no se estira la sección). */
 @media (min-width: 640px) { .ba-list--multi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .ba-list--multi .ba__frame { aspect-ratio: 3 / 4; }
+/* Cantidad impar: el último ocupa el ancho entero, apaisado, para no dejar un hueco. */
+@media (min-width: 640px) {
+  .ba-list--multi .ba:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .ba-list--multi .ba:last-child:nth-child(odd) .ba__frame { aspect-ratio: 3 / 2; }
+}
 
 .ba { margin: 0; }
 .ba__frame {
