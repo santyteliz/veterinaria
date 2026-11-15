@@ -99,7 +99,7 @@ deja crear la contraseña, a propósito.
 
 ### 7. Dominio
 
-Si el dominio final no es `clinicalaguardia.com.ar`, cambiá `"url"` en `content/site.json`
+El dominio es `veterinarialaguardia.com` (registrado en Hostinger). Si cambia, editá `"url"` en `content/site.json`
 (bloque `site`). Se usa para el canonical, el sitemap, Open Graph y los datos para Google.
 
 ### 8. Crear la contraseña del panel

@@ -3,7 +3,7 @@
  * Prueba automática del sitio (local o ya publicado).
  *
  *   node tools/smoke-test.mjs http://localhost:8000
- *   node tools/smoke-test.mjs https://clinicalaguardia.com.ar
+ *   node tools/smoke-test.mjs https://veterinarialaguardia.com
  *
  * Revisa: páginas y códigos HTTP, SEO básico (title, description, H1, canonical,
  * Open Graph, JSON-LD), links de WhatsApp y teléfono, sitemap y robots, carpetas

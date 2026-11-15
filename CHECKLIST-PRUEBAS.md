@@ -6,7 +6,7 @@ Las casillas `[ ]` son lo que falta hacer, sobre todo **en Hostinger** y **en un
 Prueba automática (repetila después de cada subida):
 
 ```bash
-node tools/smoke-test.mjs https://clinicalaguardia.com.ar
+node tools/smoke-test.mjs https://veterinarialaguardia.com
 ```
 
 Resultado local (`http://localhost:8000`): **65 OK · 0 fallas** · avisos: marcadores `[A CONFIRMAR]`
@@ -37,7 +37,7 @@ López ya no figura como servicio: solo como contacto de urgencias.
 - [ ] Razón social y CUIT del responsable → `politica-de-privacidad.php`. Revisión de la política por un abogado.
 - [ ] Que el veterinario confirme el texto de la página de vacunación (incluye "la antirrábica es obligatoria en Argentina").
 - [ ] URL de Web Wisse para el crédito del footer → `site.json` (`credits.url`).
-- [ ] Dominio definitivo: si no es `clinicalaguardia.com.ar`, cambiar `site.url` en `site.json`.
+- [x] Dominio definitivo: `veterinarialaguardia.com` (ya está en `site.url` de `site.json`).
 
 ## 1. WhatsApp y teléfono
 
@@ -146,7 +146,7 @@ LCP ~2,0 s · CLS 0 en todas. Objetivo del brief: Performance ≥ 90, Accesibili
 
 ## 9. Después de publicar
 
-- [ ] Google Search Console: agregar el dominio, enviar `https://clinicalaguardia.com.ar/sitemap.xml`.
+- [ ] Google Search Console: agregar el dominio, enviar `https://veterinarialaguardia.com/sitemap.xml`.
 - [ ] Ficha de Google Business: poner el link de la web y revisar que horarios y dirección coincidan con el panel.
 - [ ] Inspeccionar en Search Console la home y las 4 páginas de servicio y pedir indexación.
-- [ ] Volver a correr `node tools/smoke-test.mjs https://clinicalaguardia.com.ar` y quedarse con **0 fallas**.
+- [ ] Volver a correr `node tools/smoke-test.mjs https://veterinarialaguardia.com` y quedarse con **0 fallas**.
